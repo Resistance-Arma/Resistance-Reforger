@@ -1,0 +1,94 @@
+GenericEntity : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+ ID "5A2283E9CC4DE119"
+ components {
+  RSTC_ScenarioFrameworkLayerTaskRescue "{5A2283E9F84958A1}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Rescue Isolated Soldier"
+   m_sTaskDescription "Locate and extract our ally."
+   m_sTaskPrefab "{330A28D8D77E4066}Prefabs/ScenarioFramework/Tasks/TaskRescue.et"
+   m_bPlaceMarkerOnSubjectSlot 0
+   m_TaskType EXTRACTION
+   m_TaskSubType EXTRACTION_SOLDIER
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+   m_sTaskTitleAfterRescuePoint "Extract Isolated Soldier"
+   m_sTaskDescriptionAfterRescuePoint "Extract our ally."
+  }
+ }
+ coords 0 0 0
+ {
+  GenericEntity RescueAi : "{5A9EF682FBB75295}Prefabs/ScenarioFramework/Slots/SlotRescue.et" {
+   ID "6469364703E30FFC"
+   components {
+    RSTC_ScenarioFrameworkSlotRescue "{5B02763C1EAA0BF1}" {
+     m_sFactionKey "RSH_ION"
+     m_sObjectToSpawn "{64DEA0BB203DBA50}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_BaseLoadout.et"
+     m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+    }
+   }
+   coords 0 0 0
+  }
+  $grp GenericEntity : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+   RescueExtraction {
+    ID "6469364703E2C6BC"
+    components {
+     RSTC_ScenarioFrameworkSlotExtractionToPetros "{5A1EEEC837EEA27B}" {
+      m_aPlugins {
+       SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+        m_bDebug 1
+        m_fAreaRadius 7
+        m_eActivationPresence ANY_CHARACTER
+        m_bOnce 0
+       }
+      }
+      m_bShowDebugShapesInWorkbench 0
+     }
+    }
+    coords -7.352 0 -10.034
+   }
+   RescuePoint {
+    ID "6469364703E2C6BD"
+    components {
+     SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+      m_aPlugins {
+       SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+        m_bDebug 1
+        m_fAreaRadius 2
+       }
+      }
+     }
+    }
+    coords 0 0 0
+   }
+  }
+  GenericEntity LayerBase1 : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   ID "6469364703E2C6BA"
+   coords 0 0 0
+   {
+    $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+     SlotAI__Random_Group3 {
+      ID "6469364703E282B0"
+      coords -104.165 1.48 29.682
+     }
+     SlotAI__Random_Group2 {
+      ID "6469364703E2C16C"
+      coords 26.355 6.875 -102.563
+     }
+     SlotAI__Random_Group1 {
+      ID "6469364703E2C6B8"
+      coords 98.62 2.893 1.403
+     }
+     SlotAI__Random_Group4 {
+      ID "6469364703E2F644"
+      coords -8.253 -5.072 149.944
+     }
+     SlotAI__Random_Group5 {
+      ID "6469364703E2F645"
+      coords 95.249 -9.467 176.529
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,85 @@
+GenericEntity : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
+ ID "5B0276310950DF33"
+ components {
+  SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Kill the Leader"
+   m_sTaskDescription "Kill the Leader ! "
+   m_TaskType KILL
+   m_TaskSubType KILL_LEADER
+   m_ReputationWinOnSuccess 275
+   m_ReputationLossOnFailed 100
+  }
+ }
+ coords 3096.178 17.667 2661.724
+ {
+  $grp GenericEntity : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   LayerBase1 {
+    ID "646517E475CED065"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+      m_SpawnChildren ALL
+      m_sFactionKey "OCCUPANT"
+      m_iRandomPercent 100
+     }
+    }
+    coords 0 0 0
+    {
+     GenericEntity : "{D6DA33A5C6C871EA}Prefabs/ScenarioFramework/Slots/SlotKill_Random_Leader.et" {
+      ID "646AD4F6B9F02C08"
+      components {
+       SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+        m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   {
+    ID "646AD4F6E57FADB3"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+      m_iRandomPercent 30
+     }
+    }
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+      {
+       ID "646AD4F6095DD280"
+       coords 0 0 -4.127
+      }
+      {
+       ID "646AD4F6F2F3E3A5"
+       coords -3.325 0 0
+      }
+      {
+       ID "646AD4F6F500EB42"
+       coords 3.338 0 0
+      }
+      {
+       ID "646AD4F6F7177D81"
+       coords 0 0 3.552
+      }
+     }
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      {
+       ID "646AD4F65A3A9311"
+       coords 1.744 0 0
+      }
+      {
+       ID "646AD4F65C2A9F8A"
+       coords 0 0 -1.628
+      }
+      {
+       ID "646AD4F65E83F636"
+       coords 0 0 2.119
+      }
+     }
+    }
+   }
+  }
+ }
+}

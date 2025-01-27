@@ -1,0 +1,14 @@
+GenericEntity : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
+ ID "5B02763182EF750C"
+ components {
+  SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+   m_bRandomizePerFaction 1
+   m_eEntityCatalogType CHARACTER
+   m_aIncludedEditableEntityLabels {
+    42
+   }
+   m_bIncludeOnlySelectedLabels 1
+  }
+ }
+ coords 0 0 0
+}

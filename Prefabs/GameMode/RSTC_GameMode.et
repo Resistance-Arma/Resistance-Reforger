@@ -1,0 +1,98 @@
+RSTC_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
+ ID "56B2B479C6B96951"
+ components {
+  EPF_PersistenceComponent "{64750B38E368A0FF}" {
+   m_bSelfSpawn 0
+   m_bSelfDelete 0
+   m_pSaveData RSTC_ResistanceSaveDataClass "{6475273A2100B593}" {
+    m_eTranformSaveFlags 0
+    m_bSaveRemainingLifetime 0
+    m_aComponents {
+     RSTC_PlayerManagerComponentSaveDataClass "{6475273A32D8A440}" {
+     }
+     RSTC_ConfigManagerComponentSaveDataClass "{647727F87CFE3B24}" {
+     }
+    }
+   }
+  }
+  EPF_PersistenceManagerComponent "{64740198A40DCEE5}" {
+   Enabled 0
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{64740198CF8E0C64}" {
+    m_sDatabaseName "Resistance"
+   }
+  }
+  RSTC_CitiesManagerComponent "{646D6EAA60ED8112}" {
+  }
+  RSTC_ConfigManagerComponent "{646D6EAA676183A6}" {
+   m_pSlotCivilPrefabToSpawn "{CDBA82DDC7940810}Prefabs/ScenarioFramework/Slots/SlotAI_Civil.et"
+   m_sDefaultSupportedFactionKey "FIA"
+   m_iRespawnCharge 50
+   m_pPetrosPrefab "{4F5C61D24B4931E3}Prefabs/NPC/NPC_Petros.et"
+   m_sInitialPetrosPosition 3190.34 6.15 1188.17
+   m_bDynamicDespawn 1
+   m_fPretrosSearchCityForTaskRadius 2000
+  }
+  RSTC_EconomyManagerComponent "{6474C31EEEABCF40}" {
+  }
+  RSTC_PersistenceManagerComponent "{6474C31EFC269272}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{6475273B0A2A1A3B}" {
+    m_sDatabaseName "Resistance"
+    m_bPrettify 0
+   }
+  }
+  RSTC_PlayerCommsComponent "{6474C31E337624BC}" {
+  }
+  RSTC_PlayerManagerComponent "{6474274BC46E6CB3}" {
+  }
+  RSTC_ResistanceEditorManagerComponent "{6472C96C4749419E}" {
+   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
+   m_EditorPrefab "{E4E23BC4C425A16B}Prefabs/Editor/Modes/EditorModeResistance.et"
+  }
+  RSTC_ResistanceFactionManager "{6474274BCED28F03}" {
+  }
+  RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   m_rDefaultPrefab "{968A851994DCBEA7}Prefabs/Characters/RSTC_Player_Character.et"
+  }
+  RSTC_TasksManagerComponent "{646D6EAB9EF1E1E5}" {
+  }
+  RSTC_TimeAndWeatherHandlerComponent "{64750B3802B5840D}" {
+  }
+  SCR_CampaignBuildingManagerComponent "{646F5B1E9E083AC5}" {
+   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
+  }
+  SCR_CompositionSlotManagerComponent "{646F5B1E915D7C27}" {
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   Enabled 0
+  }
+  SCR_MapConfigComponent "{5C669498E250A34B}" {
+   m_sGadgetMapConfigPath "{C9B9E06AB1D2A684}Configs/Map/MapFullscreen.conf"
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
+   m_SpawnLogic SCR_AutoSpawnLogic "{646D6EA8A6CCF4D4}" {
+    m_sForcedFaction "US"
+   }
+  }
+ }
+ coords 3147.381 12.208 2756.132
+ PlayerControllerPrefab "{225E51284CC95CFA}Prefabs/Characters/Core/DefaultPlayerControllerMP.et"
+ m_aDisabledResourceTypes {
+  0
+ }
+ m_StartGameUIContext RSTC_StartGameContext "{64750B39583AF14A}" {
+  m_Layout "{B67401B95882FBBC}UI/Layouts/Menu/StartGameMenu.layout"
+  m_sContextName "ResistanceStartGameContext"
+ }
+}

@@ -1,0 +1,29 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ "Z Order" 9
+ Clipping False
+ {
+  SizeLayoutWidgetClass "{6464BE22DF287BC4}" {
+   Name "ImageLayout"
+   Slot FrameWidgetSlot "{6464BE22DF287B84}" {
+    PositionX -49.716
+    OffsetLeft -49.716
+    PositionY -45.657
+    OffsetTop -45.657
+    SizeX 100
+    OffsetRight -50.285
+    SizeY 93.773
+    OffsetBottom -48.116
+   }
+   {
+    ImageWidgetClass "{6464BE22D87C7B6C}" {
+     Name "Image"
+     Slot AlignableSlot "{6464BE22DFB135B7}" {
+     }
+     Texture "{E88973F47D8B7A98}UI/Textures/Map/unit.edds"
+     Size 44 44
+    }
+   }
+  }
+ }
+}

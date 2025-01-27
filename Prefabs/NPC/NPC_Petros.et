@@ -1,0 +1,93 @@
+RSTC_NpcPetros : "{64DEA0BB203DBA50}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_BaseLoadout.et" {
+ ID "520EC961A090B1EE"
+ components {
+  FactionAffiliationComponent "{6239642BBB275066}" {
+   "faction affiliation" ""
+  }
+  ActionsManagerComponent "{520EA1D2F659CE02}" {
+   additionalActions {
+    RSTC_LaunchRandomCityQuestAction "{64675A050A10ED58}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6462B7A85925BE3B}" {
+      Name "Ask Kill Task"
+      Description "Ask Kill Task"
+     }
+     ActionTitle "Ask Kill Task"
+     Duration 2
+     m_taskType KILL
+    }
+    RSTC_LaunchRandomCityQuestAction "{64675A050D6344D0}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6465179EC297275E}" {
+      Name "Ask Destroy Task"
+      Description "Ask Destroy Task"
+     }
+     ActionTitle "Ask Destroy Task"
+     Duration 2
+     m_taskType DESTROY
+    }
+    RSTC_LaunchRandomCityQuestAction "{64675A050EA8E2F7}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6466B1C1EC30E133}" {
+      Name "Ask Delivery Task"
+      Description "Ask Delivery Task"
+     }
+     ActionTitle "Ask Delivery Task"
+     Duration 2
+     m_taskType DELIVER
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2317C8CB1}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6466B1C1EC30E133}" {
+      Name "Ask Clear Task"
+      Description "Ask Clear Task"
+     }
+     ActionTitle "Ask Clear Task"
+     Duration 2
+     m_taskType CLEAR
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2596B5788}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6466B1C1EC30E133}" {
+      Name "Ask Search Task"
+      Description "Ask Search Task"
+     }
+     ActionTitle "Ask Search Task"
+     Duration 2
+     m_taskType SEARCH
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2701C1A88}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6466B1C1EC30E133}" {
+      Name "Ask Extraction Task"
+      Description "Ask Extraction Task"
+     }
+     ActionTitle "Ask Extraction Task"
+     Duration 2
+     m_taskType EXTRACTION
+    }
+    RSTC_StartMoveEntityAction "{647236EF05BD26FE}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{647236EF18B1B89E}" {
+      Name "Move"
+     }
+    }
+   }
+  }
+ }
+ coords 3099.26 17.398 2663.352
+}

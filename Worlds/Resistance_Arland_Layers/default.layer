@@ -1,0 +1,235 @@
+SCR_AIWorld AIWorld_Arland : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A2995A7E8BC2}" {
+     NavmeshFile "{D8EF7131FB31AF97}worlds/GameMaster/Navmeshes/GM_Arland.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A299509CF377}" {
+     NavmeshFile "{A0AEEB1E7EF474FA}worlds/GameMaster/Navmeshes/GM_Arland_vehicles.nmn"
+    }
+   }
+  }
+ }
+ coords 3135.174 13.908 2721.87
+ {
+  SCR_AIGroup {
+   coords 15.215 -1.645 32.133
+  }
+ }
+}
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 3131.62 14.212 2715.391
+}
+RSTC_FactionManager RSTC_FactionManager1 : "{7F3C781C4445F0AF}Prefabs/GameMode/RSTC_FactionManager.et" {
+ coords 3185.116 3.921 1185.022
+}
+RSTC_GameMode RSTC_GameMode : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.et" {
+ components {
+  EPF_PersistenceComponent "{64750B38E368A0FF}" {
+   m_bSelfSpawn 0
+   m_bSelfDelete 0
+   m_pSaveData RSTC_ResistanceSaveDataClass "{6475273A2100B593}" {
+    m_eTranformSaveFlags 0
+    m_bSaveRemainingLifetime 0
+    m_aComponents {
+     RSTC_PlayerManagerComponentSaveDataClass "{6475273A32D8A440}" {
+     }
+     RSTC_ConfigManagerComponentSaveDataClass "{647727F87CFE3B24}" {
+     }
+    }
+   }
+  }
+  EPF_PersistenceManagerComponent "{64740198A40DCEE5}" {
+   Enabled 0
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{64740198CF8E0C64}" {
+    m_sDatabaseName "Resistance"
+   }
+  }
+  RSTC_ConfigManagerComponent "{646D6EAA676183A6}" {
+   m_pSlotCivilPrefabToSpawn "{CDBA82DDC7940810}Prefabs/ScenarioFramework/Slots/SlotAI_Civil.et"
+   m_sDefaultSupportedFactionKey "FIA"
+   m_iRespawnCharge 50
+   m_pPetrosPrefab "{4F5C61D24B4931E3}Prefabs/NPC/NPC_Petros.et"
+   m_sInitialPetrosPosition 3190.34 6.15 1188.17
+   m_bDynamicDespawn 1
+   m_fPretrosSearchCityForTaskRadius 2000
+  }
+  RSTC_PersistenceManagerComponent "{6474C31EFC269272}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{6475273B0A2A1A3B}" {
+    m_sDatabaseName "Resistance"
+    m_bPrettify 0
+   }
+  }
+  RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   m_rDefaultPrefab "{6EEF180CE8B9C77F}Prefabs/Characters/RSTC_Character_Player.et"
+  }
+  SCR_CampaignBuildingManagerComponent "{646F5B1E9E083AC5}" {
+   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   Enabled 0
+  }
+  SCR_MapConfigComponent "{5C669498E250A34B}" {
+   m_sGadgetMapConfigPath "{C9B9E06AB1D2A684}Configs/Map/MapFullscreen.conf"
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
+   m_SpawnLogic SCR_AutoSpawnLogic "{646D6EA8A6CCF4D4}" {
+    m_sForcedFaction "US"
+   }
+  }
+ }
+ coords 3146.811 12.289 2754.67
+}
+$grp GenericEntity {
+ Cities {
+  components {
+   RplComponent "{6464BE03A18B6306}" {
+   }
+   Hierarchy "{6464BE03ADC80471}" {
+   }
+  }
+  coords 3030.484 28.777 2660.548
+  {
+   GenericEntity City_1 {
+    components {
+     RSTC_CityComponent "{6464BE0A157F50C8}" {
+      m_sFactionKey "PLAYER"
+      m_bShowDebugShapesDuringRuntime 1
+      m_eActivationType ON_INIT
+      m_bDynamicDespawn 1
+      m_iDynamicDespawnRange 10
+      m_bShowDebugShapesInWorkbench 1
+     }
+     RplComponent "{6464BE0BC37F28D3}" {
+     }
+     Hierarchy "{6464BE3DC3A30440}" {
+     }
+    }
+    coords 127.193 -14.715 102.626
+   }
+  }
+ }
+ RPG_Stack {
+  coords 3093.39 17.335 2668.099
+  {
+   $grp GenericEntity : "{7A82FE978603F137}Prefabs/Weapons/Launchers/RPG7/Launcher_RPG7.et" {
+    Launcher_RPG7_6476A760B89CF53B {
+     coords 1.561 0.584 2.004
+    }
+    Launcher_RPG7_6476A760B89CF5F1 {
+     coords 2.451 0.557 1.876
+    }
+    Launcher_RPG7_6476A760B89C8A3F {
+     coords 0.469 0.664 1.54
+    }
+    Launcher_RPG7_6476A760B89C8A67 {
+     coords 2.709 0.567 1.488
+    }
+    Launcher_RPG7_6476A760B89C8A53 {
+     coords 1.951 0.61 1.292
+    }
+    Launcher_RPG7_6476A760B89C8A8A {
+     coords 1.16 0.664 1.017
+    }
+    Launcher_RPG7_6476A760B89C8AE0 {
+     coords 1.603 0.674 0.538
+    }
+   }
+  }
+ }
+}
+SCR_LoadoutManager RSTC_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/GameMode/RSTC_LoadoutManager.et" {
+ coords 3100.892 16.834 2671.62
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5596D844009597AC}" {
+  }
+  SCR_PlayerArsenalLoadout "{568CC9D1B2D77D1F}" {
+   m_sLoadoutResource "{FD5A1A2FA455FAEE}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_Rifleman.et"
+  }
+ }
+}
+SCR_BaseTaskManager RSTC_TaskManager : "{6ABDAF9D7DE95FA5}Prefabs/GameMode/RSTC_TaskManager.et" {
+ coords 3146.681 12.173 2756.58
+}
+GenericEntity BoardDrafting_01_647727E2C5CFDD8B : "{CFF75361ACCB4F36}Prefabs/Props/Civilian/BoardDrafting_01.et" {
+ components {
+  RSTC_MovableEntityComponent "{647727E3D7A1B116}" {
+   m_maxPlacementDistance 5
+   m_placementType XYZ
+  }
+  ActionsManagerComponent "{647727E3EB50F2C2}" {
+   ActionContexts {
+    UserActionContext "{647727E3EC85A201}" {
+     ContextName "default"
+     Position PointInfo "{647727E3E0F15403}" {
+      Offset 0 1.1927 0.3961
+     }
+     Radius 5
+    }
+   }
+   additionalActions {
+    RSTC_StartMoveEntityAction "{647727E3F469A130}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{647727E30CDD36D5}" {
+      Name "Move"
+     }
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 3186.672 4.23 1191.793
+}
+GenericEntity : "{E71004E22F54F148}Prefabs/HQ/HQ_Flag.et" {
+ components {
+  RSTC_MovableEntityComponent "{64771B8D9E2C6F73}" {
+   m_maxPlacementDistance 5
+   m_placementType XYZ
+  }
+  ActionsManagerComponent "{64771B8D90AC9D94}" {
+   ActionContexts {
+    UserActionContext "{64771B8D91910988}" {
+     ContextName "default"
+     Position PointInfo "{64771B8DB5B410ED}" {
+      Offset 0 1.3489 0
+     }
+     Radius 10
+    }
+   }
+   additionalActions {
+    RSTC_StartMoveEntityAction "{64771B8DADF7C14B}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{64771B8DA4A96617}" {
+      Name "Move"
+     }
+    }
+   }
+  }
+  RplComponent "{647727E244AD3D56}" {
+  }
+ }
+ coords 3190.267 3.988 1187.31
+}

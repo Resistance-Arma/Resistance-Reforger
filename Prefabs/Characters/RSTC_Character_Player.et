@@ -1,0 +1,10 @@
+SCR_ChimeraCharacter : "{3A2FBAD5B929AC4B}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Turtleneck_3.et" {
+ ID "520EC961A090B1EE"
+ components {
+  RSTC_PlayerCommsComponent "{647727E62CAB4AF2}" {
+  }
+  RSTC_UIManagerComponent "{647727E6178650B5}" {
+  }
+ }
+ coords 3186.386 4.187 1190.785
+}

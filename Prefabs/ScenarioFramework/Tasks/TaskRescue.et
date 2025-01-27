@@ -1,0 +1,14 @@
+RSTC_ScenarioFrameworkTaskRescue {
+ ID "6468AB82F52936D4"
+ components {
+  SCR_MapDescriptorComponent "{6468AB82F52936EE}" {
+   VisibleOnMap 0
+   MainType Task
+  }
+ }
+ coords 1363.161 2.675 1074.205
+ m_sName "Rescue"
+ m_sDescription "Rescue member"
+ m_sMapIconName "Task_Evac"
+ m_sTaskListIconName "Task_Evac"
+}

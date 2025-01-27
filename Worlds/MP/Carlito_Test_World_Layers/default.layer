@@ -1,0 +1,94 @@
+SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ coords 134.078 1 93.708
+}
+SCR_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/RSTC_FactionManager.et" {
+ coords 141.015 1 104.238
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" {
+   UIInfo SCR_FactionUIInfo "{528C961236B7DCD3}" {
+    Name "US Army (Old)"
+   }
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" {
+   UIInfo SCR_FactionUIInfo "{528C96127F8B6B08}" {
+    Name "Soviet Army (Old)"
+   }
+  }
+  SCR_Faction "{56DEAC40D132400B}" {
+   UIInfo SCR_FactionUIInfo "{5570936866E0AD08}" {
+    Name "FIA (Old)"
+   }
+  }
+  SCR_Faction "{5978B9CE6585BBE8}" {
+   UIInfo SCR_FactionUIInfo "{5977478D568C0938}" {
+    Name "Russia (RHS)"
+   }
+  }
+  SCR_Faction "{5CC8DE37E1FF0F7A}" {
+   UIInfo SCR_FactionUIInfo "{5CC8B5EDA0CDBD62}" {
+    Name "US (RHS)"
+   }
+  }
+  SCR_Faction "{623962205CE2B89C}" {
+   UIInfo SCR_FactionUIInfo "{62394AA4B52816D2}" {
+    Name "ION (RHS)"
+   }
+  }
+ }
+}
+RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/RSTC_GameMode.et" {
+ coords 161.559 1 105.295
+}
+ScriptedChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ coords 146.077 1 109.272
+}
+SCR_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/RSTC_LoadoutManager.et" {
+ coords 154.984 1 99.908
+ m_aPlayerLoadouts {
+  SCR_PlayerArsenalLoadout "{568CC9D1BC0FCCF3}" {
+   m_sLoadoutResource "{5B1996C05B1E51A4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AR.et"
+  }
+ }
+}
+SCR_BaseTaskManager : "{6ABDAF9D7DE95FA5}Prefabs/RSTC_TaskManager.et" {
+ coords 160.344 1 108.368
+}
+GenericEntity : "{7539A3D14B703C51}Prefabs/ScenarioFramework/Cities.et" {
+ coords 139.882 1 109.266
+ {
+  GenericEntity City1 : "{FF0093D414C889DA}Prefabs/ScenarioFramework/City.et" {
+   coords 0 0 0
+  }
+ }
+}
+GenericEntity : "{FCE3FA547AA13ECC}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V2.et" {
+ components {
+  RSTC_MovableEntityComponent "{6472C975A1F1A9E4}" {
+   m_placementType XYZ
+  }
+  ActionsManagerComponent "{6472124087A87C8A}" {
+   ActionContexts {
+    UserActionContext "{6472124094228605}" {
+     ContextName "default"
+     Position PointInfo "{64721240A50E18EA}" {
+      Offset 0 1.2399 0
+     }
+     Radius 8
+    }
+   }
+   additionalActions {
+    RSTC_StartMoveEntityAction "{64721240B6E8E2F8}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6472125888C1D9DB}" {
+      Name "Move"
+     }
+    }
+   }
+  }
+  RplComponent "{647212402046C7B1}" {
+  }
+ }
+ coords 138.918 1 94.49
+}

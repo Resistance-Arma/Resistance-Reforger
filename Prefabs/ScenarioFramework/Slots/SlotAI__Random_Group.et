@@ -1,0 +1,10 @@
+GenericEntity : "{9F2A9175455E07F4}Prefabs/Scenario/SlotAI.et" {
+ ID "5A26E3FA239786D5"
+ components {
+  SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+   m_bRandomizePerFaction 1
+   m_eEntityCatalogType GROUP
+  }
+ }
+ coords -3.081 0 0
+}

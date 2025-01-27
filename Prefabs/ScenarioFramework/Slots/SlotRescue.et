@@ -1,0 +1,8 @@
+GenericEntity : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
+ ID "5B02763182EF750C"
+ components {
+  RSTC_ScenarioFrameworkSlotRescue "{5B02763C1EAA0BF1}" {
+  }
+ }
+ coords 3092.578 19.528 2629.868
+}

@@ -1,0 +1,104 @@
+GenericEntity {
+ ID "5A6513F49A728B67"
+ components {
+  SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Take Fuel"
+   m_sTaskDescription "Take Fuel"
+   m_sTaskPrefab "{9DDDA4BB387EC0B6}Prefabs/ScenarioFramework/Tasks/TaskDeliver.et"
+   m_bPlaceMarkerOnSubjectSlot 1
+   m_TaskType DELIVER
+   m_TaskSubType DELIVER_FUEL
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+   m_sTaskTitleUpdated "Deliver Fuel"
+   m_sTaskDescriptionUpdated "Deliver Fuel"
+  }
+  Hierarchy "{646CB0CC394822C8}" {
+  }
+ }
+ coords -35.132 2.725 -118.069
+ {
+  $grp GenericEntity {
+   SlotPick1 {
+    ID "6466EDD3526D87BD"
+    components {
+     RSTC_ScenarioFrameworkSlotPickToPetros "{5A2283FD60F69A1A}" {
+      m_sObjectToSpawn "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      m_sTaskTitle "Deliver Fuel "
+      m_sTaskDescription "Take fuel from Petros and deliver it !"
+      m_sTaskTitleUpdated1 "Deliver Fuel "
+      m_sTaskDescriptionUpdated1 "Deliver Fuel, the citizen need our help !"
+      m_sTaskTitleUpdated2 ""
+      m_sTaskDescriptionUpdated2 ""
+     }
+     Hierarchy "{646CB0C7967AC1D2}" {
+     }
+    }
+   }
+   SlotDelivery1 {
+    ID "6466EDD3526D9923"
+    components {
+     SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+      m_aPlugins {
+       SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
+        m_fAreaRadius 3
+        m_bOnce 0
+       }
+      }
+      m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/ScenarioFrameworkCharacterTrigger.et"
+     }
+     Hierarchy "{646CB0CC3EB1C691}" {
+     }
+    }
+   }
+  }
+  GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+   ID "646CF01C31DE2D04"
+   components {
+    SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+     m_aPlugins {
+      SCR_ScenarioFrameworkPluginOnDestroyEvent "{646CF01DAFCBBE57}" {
+       m_aActionsOnDestroy {
+        SCR_ScenarioFrameworkActionChangeTaskState "{646CF01DA4056DF0}" {
+        }
+       }
+      }
+     }
+     m_sObjectToSpawn "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et"
+     m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+     m_eAICombatType NONE
+    }
+   }
+   coords 0 0 0
+  }
+  GenericEntity LayerBase1 : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   ID "6467728E242F3014"
+   components {
+    SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+     m_SpawnChildren RANDOM_MULTIPLE
+     m_sFactionKey "OCCUPANT"
+     m_iRandomPercent 70
+    }
+   }
+   coords 0 0 0
+   {
+    $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+     SlotAI__Random_Group3 {
+      ID "6467728E242F197A"
+      coords 15.017 10.362 -108.177
+     }
+     SlotAI__Random_Group1 {
+      ID "6467728E242F3012"
+      coords 44.294 -1.144 68.067
+     }
+     SlotAI__Random_Group2 {
+      ID "6467728E242F3013"
+      coords -84.793 0.327 14.292
+     }
+    }
+   }
+  }
+ }
+}

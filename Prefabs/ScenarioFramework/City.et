@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "646700B8A0ACFF2C"
+ components {
+  RSTC_CityComponent "{6464BE0A157F50C8}" {
+   m_sFactionKey "RHS_ION"
+   m_bDynamicDespawn 1
+   m_iDynamicDespawnRange 1250
+  }
+  RplComponent "{6464BE0BC37F28D3}" {
+  }
+  Hierarchy "{6464BE3DC3A30440}" {
+  }
+ }
+ coords 112.585 -14.715 139.473
+}

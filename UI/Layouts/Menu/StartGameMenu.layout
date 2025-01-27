@@ -1,0 +1,147 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ Color 0.015 0.015 0.015 1
+ {
+  PanelWidgetClass "{64750B316BC3CC14}" {
+   Name "Panel0"
+   Slot FrameWidgetSlot "{64750B316BC3CC4E}" {
+    Anchor 0 0 0 1
+    PositionX 177.054
+    OffsetLeft 177.054
+    PositionY 146.024
+    OffsetTop 146.024
+    SizeX 1170.29
+    OffsetRight -1347.34
+    SizeY -412.247
+    OffsetBottom 266.223
+   }
+   Color 0.016 0.014 0.014 1
+   "Inherit Color" 1
+   style rover_sim_colorable
+   {
+    ImageWidgetClass "{64750B374082D3D7}" {
+     Name "Background0"
+     Slot FrameWidgetSlot "{64750B374082D05A}" {
+      PositionX 0.621
+      OffsetLeft 0.621
+      PositionY 1.256
+      OffsetTop 1.256
+      SizeX 1170.91
+      OffsetRight -1171.53
+      SizeY 669.315
+      OffsetBottom -670.571
+     }
+     Color 0 0 0 0.514
+    }
+    VerticalLayoutWidgetClass "{64750B30878FAF1A}" {
+     Name "VerticalLayout0"
+     Slot FrameWidgetSlot "{64750B30878FAF67}" {
+      PositionX 91.721
+      OffsetLeft 91.721
+      PositionY 89.084
+      OffsetTop 89.084
+      SizeX 1052.49
+      OffsetRight -1144.21
+      SizeY 465.612
+      OffsetBottom -554.696
+     }
+     {
+      TextWidgetClass "{64750B37A7869561}" : "{9D643D214767D616}UI/layouts/WidgetLibrary/TextWidgets/Text_Heading2.layout" {
+       Name "txtRankName"
+       Slot LayoutSlot "{64752739D6330B39}" {
+       }
+       Text "Game Settings"
+      }
+      VerticalLayoutWidgetClass "{64750B3442C7FECA}" : "{FEEEB639F2735BA1}UI/layouts/Menus/SettingsMenu/CustomWidgets/SettingsTitle.layout" {
+       Name "TitleVolume"
+       Slot LayoutSlot "{58B32278C99818F2}" {
+       }
+       components {
+        SCR_LabelComponent "{58B30C1A8E56F0FF}" {
+         m_sLabel "Faction"
+        }
+       }
+       {
+        TextWidgetClass "{58B30C1F77EC7B4E}" {
+         Prefab "{58B30C1F77EC7B4E}"
+         Slot LayoutSlot "{58B30C1F77EC7B76}" {
+         }
+        }
+       }
+      }
+      ButtonWidgetClass "{64750B35B7EF6DAB}" : "{C9DF0E6590F6C388}UI/layouts/WidgetLibrary/SpinBox/WLib_SpinBox.layout" {
+       Name "ResistanceFactionSpinner"
+       Slot LayoutSlot "{54890CCD61050681}" {
+        Padding 4 4 4 4
+       }
+       components {
+        SCR_SpinBoxComponent "{5472C6CBC0640458}" {
+         m_sLabel "Resistance"
+         m_sLabelLayout "{F003823FF141983C}UI/layouts/Menus/SettingsMenu/CustomWidgets/SettingsLabel.layout"
+         m_bUseLightArrows 1
+         m_bCycleMode 1
+        }
+       }
+      }
+      ButtonWidgetClass "{64750B34C4DBD1EB}" : "{C9DF0E6590F6C388}UI/layouts/WidgetLibrary/SpinBox/WLib_SpinBox.layout" {
+       Name "OccupyingFactionSpinner"
+       Slot LayoutSlot "{54890CCD61050681}" {
+        Padding 4 4 4 4
+       }
+       components {
+        SCR_SpinBoxComponent "{5472C6CBC0640458}" {
+         m_sLabel "Occupying"
+         m_sLabelLayout "{F003823FF141983C}UI/layouts/Menus/SettingsMenu/CustomWidgets/SettingsLabel.layout"
+         m_bUseLightArrows 1
+         m_bCycleMode 1
+        }
+       }
+      }
+      ButtonWidgetClass "{64750B34C7258B17}" : "{C9DF0E6590F6C388}UI/layouts/WidgetLibrary/SpinBox/WLib_SpinBox.layout" {
+       Name "InvaderFactionSpinner"
+       Slot LayoutSlot "{54890CCD61050681}" {
+        Padding 4 4 4 4
+       }
+       components {
+        SCR_SpinBoxComponent "{5472C6CBC0640458}" {
+         m_sLabel "Invader"
+         m_sLabelLayout "{F003823FF141983C}UI/layouts/Menus/SettingsMenu/CustomWidgets/SettingsLabel.layout"
+         m_bUseLightArrows 1
+         m_bCycleMode 1
+        }
+       }
+      }
+     }
+    }
+    HorizontalLayoutWidgetClass "{64750B36BC2D09BD}" {
+     Name "HorizontalLayout0"
+     Slot FrameWidgetSlot "{64750B36BC2D0998}" {
+      PositionX 983.884
+      OffsetLeft 983.884
+      PositionY 584.065
+      OffsetTop 584.065
+      SizeX 155.3
+      OffsetRight -1139.18
+      SizeY 74.51
+      OffsetBottom -658.575
+     }
+     {
+      ButtonWidgetClass "{64750B36BCE5C3F5}" : "{08CF3B69CB1ACBC4}UI/layouts/WidgetLibrary/Buttons/WLib_NavigationButton.layout" {
+       Name "StartGameButton"
+       Slot LayoutSlot "{5AB4C088B610213E}" {
+        Padding 8 0 0 0
+       }
+       "Z Order" 1
+       components {
+        SCR_InputButtonComponent "{5D346C3DD81D95CD}" {
+         m_sActionName "MenuSelect"
+         m_sLabel "Start Game"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

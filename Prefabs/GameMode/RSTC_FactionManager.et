@@ -1,0 +1,25 @@
+RSTC_FactionManager : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ ID "56B2B4776E6E4499"
+ coords 3098.088 17.436 2663.559
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{56DEAC40D132400B}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{5978B9CE6585BBE8}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{5CC8DE37E1FF0F7A}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{623962205CE2B89C}" {
+   m_bIsPlayable 1
+  }
+ }
+ m_bCanChangeFactionsPlayable 0
+}

@@ -1,0 +1,17 @@
+RSTC_TaskDestroyOrStealVehicle {
+ ID "6468ABB8B9A38795"
+ components {
+  SCR_MapDescriptorComponent "{6468ABB8B9A387EE}" {
+   DisplayName "#AR-CombatScenario_DestroyTask_B_Title"
+   VisibleOnMap 0
+   MainType Task
+   Faction 2
+  }
+ }
+ coords 1356.394 1.677 1054.424
+ m_sName "#AR-Commanding_Command_SaD"
+ m_sDescription "#AR-Editor_ContextAction_NeutralizeEntity_Description"
+ m_sMapIconName "Task_Sabotage"
+ m_sTaskListIconName "Task_Sabotage"
+ m_sIconImageset "{10C0A9A305E8B3A4}UI/Imagesets/Tasks/Task_Icons.imageset"
+}

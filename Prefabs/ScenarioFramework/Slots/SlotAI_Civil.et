@@ -1,0 +1,13 @@
+GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+ ID "5A26E3FA239786D5"
+ components {
+  RSTC_ScenarioFrameworkSlotCivil "{5A26B3E02AC77BA0}" {
+   m_sFactionKey "CIV"
+   m_eActivationType ON_INIT
+   m_sObjectToSpawn "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et"
+   m_bRandomizePerFaction 1
+   m_eEntityCatalogType CHARACTER
+  }
+ }
+ coords 7488.405 139.097 4709.027
+}

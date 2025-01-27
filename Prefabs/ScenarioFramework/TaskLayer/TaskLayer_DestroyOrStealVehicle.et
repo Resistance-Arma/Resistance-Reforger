@@ -1,0 +1,128 @@
+GenericEntity {
+ ID "5A6513F5EA1C13D1"
+ components {
+  SCR_ScenarioFrameworkLayerTaskDestroy "{5A6513F41BA457C8}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Destroy or Steal Vehicle"
+   m_sTaskDescription "Destroy or Steal Vehicle"
+   m_sTaskPrefab "{2D679754E0712A5C}Prefabs/ScenarioFramework/Tasks/TaskDestroyOrStealVehicle.et"
+   m_TaskType DESTROY
+   m_TaskSubType DESTROY_STEAL_VEHICLE
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+  }
+  Hierarchy "{646CB0CC35A706A0}" {
+  }
+ }
+ coords -7.757 -0.414 8.59
+ {
+  GenericEntity Destroy {
+   ID "646AD4A1C2D2F9A1"
+   components {
+    SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+     m_sFactionKey "OCCUPANT"
+    }
+    Hierarchy "{646CB0DD3BA0543F}" {
+    }
+   }
+   coords 0 0 0
+   {
+    GenericEntity {
+     ID "646AD4A1C2D2F9A2"
+     components {
+      SCR_ScenarioFrameworkSlotDestroy "{5A22E1D6276BD209}" {
+       m_bExcludeFromDynamicDespawn 1
+       m_sObjectToSpawn "{6E9142CD2471741C}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_engineer.et"
+       m_bCanBeGarbageCollected 0
+       m_bRandomizePerFaction 1
+       m_eEntityCatalogType VEHICLE
+       m_aExcludedEditableEntityLabels {
+        51
+       }
+       m_bIncludeOnlySelectedLabels 1
+      }
+      Hierarchy "{646CB0CC4BEA051D}" {
+      }
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   EnnemiesGroups {
+    ID "646AD4A7AFB456B8"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+      m_iRandomPercent 40
+     }
+    }
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+      SlotAI__Random_Group4 {
+       ID "646AD4A7AFB58BB7"
+       coords -13.054 -0.926 17.139
+      }
+      SlotAI__Random_Group1 {
+       ID "646AD4A7AFB59178"
+       coords 13.5 0.75 -18.656
+      }
+      SlotAI__Random_Group2 {
+       ID "646AD4A7AFB59179"
+       coords -10.642 -0.226 -2.404
+      }
+      SlotAI__Random_Group3 {
+       ID "646AD4A7AFB5D6DE"
+       coords 10.552 -0.153 2.345
+      }
+     }
+    }
+   }
+   Ennemies {
+    ID "646AD4A7AFB4F26A"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+      m_SpawnChildren ALL
+      m_iRandomPercent 100
+     }
+    }
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      SlotAI_Random_Solo2 {
+       ID "646AD4A7AFB456BA"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -3.484 -0.15 3.832
+      }
+      SlotAI_Random_Solo3 {
+       ID "646AD4A7AFB456BB"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 4.281 0.236 -4.147
+      }
+      SlotAI_Random_Solo1 {
+       ID "646AD4A7AFB4F26B"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 3.622 -0.128 -2.67
+      }
+      {
+       ID "646CB0DBB9CAF32C"
+       coords 0 0 -6.137
+      }
+     }
+    }
+   }
+  }
+ }
+}

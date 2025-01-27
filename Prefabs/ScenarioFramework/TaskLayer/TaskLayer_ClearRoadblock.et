@@ -1,0 +1,225 @@
+GenericEntity {
+ ID "5A6513F475666863"
+ components {
+  SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Clear Roadblock"
+   m_sTaskDescription "Clear Roadblock"
+   m_sTaskPrefab "{A5E8E68E46D3E064}Prefabs/ScenarioFramework/Tasks/TaskClearArea.et"
+   m_TaskType CLEAR
+   m_TaskSubType CLEAR_AREA_ROADBLOCK
+   m_ReputationWinOnSuccess 175
+   m_ReputationLossOnFailed 75
+  }
+  Hierarchy "{646B6D0101A5F2D7}" {
+  }
+ }
+ coords -145.582 -2.919 7.852
+ Flags 3
+ {
+  $grp GenericEntity {
+   Layer_AI1 {
+    ID "64693645A6D2546C"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_sFactionKey "OCCUPANT"
+     }
+     Hierarchy "{646B6D0105EDDF7E}" {
+     }
+    }
+    coords 0 0 0
+    angleY 49.113
+    {
+     GenericEntity SlotAI__Random_Group1 : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+      ID "646AD4E0F827D2DF"
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+       }
+      }
+      coords -0.28 0.232 -0.088
+      angleY 2.008
+     }
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      SlotAI_Random_Solo2 {
+       ID "646AD4E0F8261B04"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+        }
+       }
+       coords 0.52 -0.069 -4.665
+       angleY 2.008
+      }
+      SlotAI_Random_Solo1 {
+       ID "646AD4E0F8261B07"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+        }
+       }
+       coords -1.119 -0.076 -4.618
+       angleY 2.008
+      }
+      SlotAI_Random_Solo4 {
+       ID "646AD4E0F827D2D8"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+        }
+       }
+       coords -0.971 -0.069 4.571
+       angleY 2.008
+      }
+      SlotAI_Random_Solo3 {
+       ID "646AD4E0F827D2D9"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+        }
+       }
+       coords 0.681 -0.049 4.477
+       angleY 2.008
+      }
+     }
+    }
+   }
+   Layer1 {
+    ID "64693645A6D2546E"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{646B6C33B2F17B57}" {
+     }
+     Hierarchy "{646B6C33B72B31B3}" {
+     }
+    }
+    coords 0 0 0
+    angleY 49.113
+    {
+     GenericEntity {
+      ID "64693645A6D2546D"
+      components {
+       SCR_ScenarioFrameworkSlotClearArea "{5A633AF525D5B972}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A633AF5368D26A3}" {
+          m_fAreaRadius 25
+          m_sActivatedByThisFaction "RHS_ION"
+         }
+        }
+        m_sObjectToSpawn "{2CB3F93211D06F83}Prefabs/ScenarioFramework/Triggers/TriggerDominance.et"
+       }
+       Hierarchy "{646B6D011D4645CE}" {
+       }
+      }
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   LayerBase1 {
+    ID "646AD4E0F827D2DD"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+      m_SpawnChildren ALL
+      m_iRandomPercent 100
+     }
+    }
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/ScenarioFramework/Components/Slot.et" {
+      Slot4 {
+       ID "646CF01F1CDE2877"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{A3A7C365E845B1B6}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_long_high_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords 3.898 -0.303 3.195
+       angleY -180
+      }
+      Slot5 {
+       ID "646CF01F39EEFBBC"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{A3A7C365E845B1B6}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_long_high_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords -3.235 -0.303 3.209
+       angleY 180
+      }
+      Slot8 {
+       ID "646CF01F47EFC984"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{A3A7C365E845B1B6}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_long_high_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords 2.881 -0.303 -4.155
+       angleY 180
+      }
+      Slot6 {
+       ID "646CF01F47EFC994"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{A3A7C365E845B1B6}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_long_high_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords -4.252 -0.303 -4.097
+       angleY -180
+      }
+      Slot7 {
+       ID "646CF01F47EFC9BD"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{8BABAE6E7F9B3E39}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_bunker_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords -0.757 0 -5.822
+      }
+      Slot3 {
+       ID "646CF01FE9346B9B"
+       components {
+        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+         m_sObjectToSpawn "{8BABAE6E7F9B3E39}PrefabsEditable/Auto/Props/Military/Sandbags/E_Sandbag_01_bunker_burlap.et"
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords 0.26 0 4.964
+       angleY 180
+      }
+     }
+    }
+   }
+   {
+    ID "646B5CBA73887FF2"
+    coords 0 0 0
+    angleY 49.113
+    {
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      SlotAI_Random_Solo3 {
+       ID "646B5CBBAD01A785"
+       coords 3.562 0.265 -6.155
+      }
+      SlotAI_Random_Solo1 {
+       ID "646B5CBBAD01A795"
+       coords -4.194 -0.364 4.913
+      }
+      SlotAI_Random_Solo2 {
+       ID "646B5CBBAD01A79D"
+       coords 3 0.248 5.801
+      }
+      SlotAI_Random_Solo4 {
+       ID "646B5CBBAD01A7BA"
+       coords -4.227 -0.37 -6.278
+      }
+     }
+    }
+   }
+  }
+ }
+}

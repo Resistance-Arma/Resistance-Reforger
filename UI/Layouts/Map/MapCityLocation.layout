@@ -1,0 +1,29 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ Clipping False
+ {
+  SizeLayoutWidgetClass "{6464BE2C4DCE8E2D}" {
+   Name "ImageLayout"
+   Slot FrameWidgetSlot "{6464BE22DF287B84}" {
+    Anchor 0 0 0 0
+    PositionX -44.415
+    OffsetLeft -44.415
+    PositionY -43.241
+    OffsetTop -43.241
+    SizeX 88.742
+    OffsetRight -44.327
+    SizeY 85.893
+    OffsetBottom -42.652
+   }
+   {
+    ImageWidgetClass "{6464BE2C4DCE8E22}" {
+     Name "Image"
+     Slot AlignableSlot "{6464BE22DFB135B7}" {
+     }
+     Texture "{433E3349498693E0}UI/Textures/Tasks/TaskIcons/96/Icon_Task_BG.edds"
+     Size 96 96
+    }
+   }
+  }
+ }
+}

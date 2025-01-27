@@ -1,0 +1,10 @@
+enum RSTC_ESFTaskType
+{
+	SEARCH,
+	DELIVER,
+	DESTROY,
+	KILL,
+	CLEAR,
+	EXTRACTION,
+	NONE
+}

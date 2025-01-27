@@ -1,0 +1,14 @@
+SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+ ID "56B2B47708C4F23A"
+ coords 3100.759 16.816 2672.089
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5596D844009597AC}" {
+   m_sLoadoutResource "{FD5A1A2FA455FAEE}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_Rifleman.et"
+   m_sAffiliatedFaction "RHS_ION"
+  }
+  SCR_PlayerArsenalLoadout "{568CC9D1B2D77D1F}" {
+   m_sLoadoutResource "{53F6F7CF18A303D4}Prefabs/Characters/Factions/INDFOR/RHS_ION/Character_RHS_ION_base.et"
+   m_sAffiliatedFaction "RHS_ION"
+  }
+ }
+}

@@ -1,0 +1,291 @@
+SCR_AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
+ coords 7452.378 137.34 4734.994
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 7487.948 137.587 4732.093
+}
+SCR_FactionManager RSTC_FactionManager1 : "{7F3C781C4445F0AF}Prefabs/RSTC_FactionManager.et" {
+ coords 7486.111 136.993 4739.765
+}
+RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/RSTC_GameMode.et" {
+ coords 7486.705 136.918 4741.554
+}
+GenericEntity Cities {
+ coords 7435.892 136.78 4739.889
+ {
+  $grp GenericEntity : "{FF0093D414C889DA}Prefabs/ScenarioFramework/City.et" {
+   City_Levie {
+    components {
+     RSTC_CityComponent "{6464BE0A157F50C8}" {
+      m_eActivationType ON_INIT
+      m_fDefaultSupportedFactionReputation 650
+     }
+    }
+    coords 17.358 0.628 -7.499
+    {
+     GenericEntity TaskLayer_ClearRoadblock1 : "{2353B744A1FF273B}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_ClearRoadblock.et" {
+      coords -119.546 -2.162 10.192
+      angleY -6.344
+      {
+       GenericEntity GenericEntity1 {
+        ID "646B5CBA73887FF2"
+       }
+       GenericEntity Layer1 {
+        ID "64693645A6D2546E"
+       }
+       GenericEntity LayerBase1 {
+        ID "646AD4E0F827D2DD"
+       }
+       GenericEntity Layer_AI1 {
+        ID "64693645A6D2546C"
+       }
+      }
+     }
+     GenericEntity TaskLayer_KillLeader1 : "{248FB5E7288F93F2}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_KillLeader.et" {
+      coords -41.476 2.301 -7.748
+      {
+       GenericEntity GenericEntity2 {
+        ID "646AD4F6E57FADB3"
+        {
+         GenericEntity {
+          ID "646AD4F6095DD280"
+          coords -1.536 0 -1.904
+         }
+         GenericEntity {
+          ID "646AD4F6F7177D81"
+          coords -2.808 0 2.49
+         }
+        }
+       }
+       GenericEntity LayerBase4 {
+        ID "646517E475CED065"
+       }
+      }
+     }
+     GenericEntity TaskLayer_SearchIntel1 : "{4F030E301E3BA3BB}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_SearchIntel.et" {
+      coords -48.127 3.301 -9.543
+      {
+       GenericEntity LayerBase7 {
+        ID "646AD4F75A301564"
+       }
+       GenericEntity LayerBase6 {
+        ID "646AD4F75A305EFF"
+       }
+       GenericEntity SlotDelivery1 {
+        ID "6466EDD3526D9923"
+       }
+       GenericEntity SlotPick1 {
+        ID "6466EDD3526D87BD"
+       }
+      }
+     }
+     $grp GenericEntity : "{53F9DA1DE3049EC9}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_ClearBigArea.et" {
+      TaskLayer_ClearBigArea1 {
+       coords 380.494 5.758 293.823
+       {
+        GenericEntity GenericEntity3 {
+         ID "646AD4A55204C6ED"
+        }
+        GenericEntity Layer_AI2 {
+         ID "64693645A6D2546C"
+        }
+       }
+      }
+      TaskLayer_ClearBigArea2 {
+       coords -185.362 -18.751 201.854
+       {
+        GenericEntity GenericEntity4 {
+         ID "646AD4A55204C6ED"
+        }
+        GenericEntity Layer_AI3 {
+         ID "64693645A6D2546C"
+        }
+       }
+      }
+      TaskLayer_ClearBigArea3 {
+       coords -1.956 -0.213 5.64
+       {
+        GenericEntity GenericEntity5 {
+         ID "646AD4A55204C6ED"
+        }
+        GenericEntity Layer_AI4 {
+         ID "64693645A6D2546C"
+        }
+       }
+      }
+     }
+     GenericEntity TaskLayer_ClearSmallArea1 : "{DF51F9699481FB4E}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_ClearSmallArea.et" {
+      coords 85.729 11.607 -108.664
+      {
+       GenericEntity Layer2 {
+        ID "64693645A6D2546E"
+       }
+       GenericEntity Layer_AI5 {
+        ID "64693645A6D2546C"
+       }
+      }
+     }
+     GenericEntity TaskLayer_DestroyOrStealVehicle1 : "{E287DEE516921303}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_DestroyOrStealVehicle.et" {
+      coords -7.264 0.184 -15.983
+      {
+       GenericEntity Destroy1 {
+        ID "646AD4A1C2D2F9A1"
+        {
+         GenericEntity {
+          ID "646AD4A1C2D2F9A2"
+          coords -0.491 0 -1.079
+          angleY 24.493
+         }
+        }
+       }
+       GenericEntity Ennemies1 {
+        ID "646AD4A7AFB4F26A"
+       }
+       GenericEntity EnnemiesGroups1 {
+        ID "646AD4A7AFB456B8"
+       }
+      }
+     }
+     GenericEntity TaskLayer_DeliverFuel1 : "{E344FC7B14D15711}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_DeliverFuel.et" {
+      components {
+       SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+        m_ReputationWinOnSuccess 2000
+       }
+      }
+      coords -36.958 -1.116 39.022
+      {
+       GenericEntity GenericEntity6 {
+        ID "646CF01C31DE2D04"
+       }
+       GenericEntity LayerBase8 {
+        ID "6467728E242F3014"
+       }
+       GenericEntity SlotDelivery2 {
+        ID "6466EDD3526D9923"
+       }
+       GenericEntity SlotPick2 {
+        ID "6466EDD3526D87BD"
+       }
+      }
+     }
+     GenericEntity TaskLayer_Rescue1 : "{E9A9C8729F9C756E}Prefabs/ScenarioFramework/TaskLayer/TaskLayer_Rescue.et" {
+      components {
+       RSTC_ScenarioFrameworkLayerTaskRescue "{5A2283E9F84958A1}" {
+        m_ReputationLossOnFailed 15000
+       }
+      }
+      coords 19.555 0.701 25.84
+      {
+       GenericEntity LayerBase5 {
+        ID "6469364703E2C6BA"
+       }
+       GenericEntity RescueAi1 {
+        ID "6469364703E30FFC"
+       }
+       GenericEntity RescueExtraction1 {
+        ID "6469364703E2C6BC"
+       }
+       GenericEntity RescuePoint1 {
+        ID "6469364703E2C6BD"
+       }
+      }
+     }
+    }
+   }
+   City_Laruns {
+    coords 120.801 -54.088 795.1
+   }
+   City_Chotain {
+    coords -364.937 -18.347 1280.774
+   }
+   City_Provins {
+    coords -1927.4 -41.162 1341.942
+   }
+   City_Figari {
+    coords -2180.57 -73.836 606.229
+   }
+   City_Morton {
+    coords -2314.654 -122.55 -733.333
+   }
+   City_Regina {
+    coords -235.859 -0.009 -2408.514
+   }
+   City_Duras {
+    coords 1391.761 -42.124 -1991.48
+   }
+   City_Vernon {
+    coords 1819.343 -78.322 -2666.048
+   }
+   City_StPierre {
+    coords 2249.445 -123.105 -3190.092
+   }
+   City_EntreDeux {
+    coords -1665.029 80.611 2323.971
+   }
+   City_Montignac {
+    coords -2662.292 27.107 2364.267
+   }
+   City_Gravette {
+    coords -3311.888 -101.25 3055.502
+   }
+   City_Tyrone {
+    coords -2517.86 -100.046 4340.608
+   }
+   City_Meaux {
+    coords -2899.686 -122.209 4722.296
+   }
+   City_StPhillipe {
+    coords -2949.415 -123.191 5987.354
+   }
+   City_LeMoule {
+    coords -4803.601 -44.793 631.248
+   }
+   City_Villeneuf {
+    coords -4589.79 -50.178 1604.52
+   }
+   City_Lamentin {
+    coords -6156.493 -99.262 1201.876
+   }
+  }
+ }
+}
+SCR_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/RSTC_LoadoutManager.et" {
+ coords 7487.81 137.072 4739.4
+ m_aPlayerLoadouts {
+  SCR_PlayerArsenalLoadout "{568CC9D1B2D77D1F}" {
+   m_sLoadoutResource "{A33B018249DE49E6}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Rifleman.et"
+  }
+ }
+}
+SCR_ChimeraCharacter Petros : "{4F5C61D24B4931E3}Prefabs/NPC/NPC_Petros.et" {
+ components {
+  ActionsManagerComponent "{520EA1D2F659CE02}" {
+   additionalActions {
+    RSTC_LaunchRandomCityQuestAction "{64675A050A10ED58}" {
+    }
+    RSTC_LaunchRandomCityQuestAction "{64675A050D6344D0}" {
+    }
+    RSTC_LaunchRandomCityQuestAction "{64675A050EA8E2F7}" {
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2317C8CB1}" {
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2596B5788}" {
+    }
+    RSTC_LaunchRandomCityQuestAction "{646AD4C2701C1A88}" {
+    }
+   }
+  }
+ }
+ coords 7500.475 137.393 4734.12
+ {
+  SCR_SpawnPoint : "{F8DE84ED8803535C}Prefabs/SpawnPoint_RHS_ION.et" {
+   coords 0 0 1.25
+  }
+ }
+}
+SCR_BaseTaskManager : "{6ABDAF9D7DE95FA5}Prefabs/RSTC_TaskManager.et" {
+ coords 7487.633 137.175 4738.074
+}
+GenericEntity SlotAI_Civil1 : "{CDBA82DDC7940810}Prefabs/ScenarioFramework/Slots/SlotAI_Civil.et" {
+ coords 7457.024 137.537 4731.674
+}

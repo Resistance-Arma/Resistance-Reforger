@@ -1,0 +1,165 @@
+GenericEntity {
+ ID "5A6513F475666863"
+ components {
+  SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Clear Small Area"
+   m_sTaskDescription "Clear Small Area"
+   m_sTaskPrefab "{A5E8E68E46D3E064}Prefabs/ScenarioFramework/Tasks/TaskClearArea.et"
+   m_TaskType CLEAR
+   m_TaskSubType CLEAR_SMALL_AREA
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+  }
+  Hierarchy "{646B6D02A6DDF0EC}" {
+  }
+ }
+ coords 15.926 -0.459 -0.959
+ {
+  $grp GenericEntity {
+   Layer_AI1 {
+    ID "64693645A6D2546C"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_SpawnChildren RANDOM_MULTIPLE
+      m_sFactionKey "OCCUPANT"
+      m_iRandomPercent 75
+     }
+     Hierarchy "{646B6934137B93A2}" {
+     }
+    }
+    {
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      SlotAI_Random_Solo8 {
+       ID "6469365B7F257551"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -2.156 0.08 -0.196
+      }
+      SlotAI_Random_Solo9 {
+       ID "6469365B7F2599F4"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -0.994 0.256 -1.506
+      }
+      SlotAI_Random_Solo6 {
+       ID "6469365B7F2599F5"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -2.847 -0.137 2.376
+      }
+      SlotAI_Random_Solo2 {
+       ID "6469365B7F3AA054"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -0.644 -0.109 2.624
+      }
+      SlotAI_Random_Solo1 {
+       ID "6469365B7F3AA057"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 1.209 0.086 -1.259
+      }
+      SlotAI_Random_Solo7 {
+       ID "6469365B7F3AC7EC"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -0.303 0.4 -4.078
+      }
+      SlotAI_Random_Solo5 {
+       ID "6469365B7F3AD2F3"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -1.335 -0.206 5.196
+      }
+      SlotAI_Random_Solo4 {
+       ID "6469365B7F3AD2F5"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -10.359 0.092 -5.083
+      }
+      SlotAI_Random_Solo2 {
+       ID "646B5CB86D212603"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -1.286 0.562 -15.083
+      }
+      SlotAI_Random_Solo4 {
+       ID "646B5CB86D212663"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 16.771 -0.12 2.198
+      }
+      SlotAI_Random_Solo1 {
+       ID "646B5CB86D212677"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 4.065 0.07 -0.327
+      }
+     }
+    }
+   }
+   Layer1 {
+    ID "64693645A6D2546E"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{646B6934189F4EE4}" {
+     }
+     Hierarchy "{646B69341C40F3FD}" {
+     }
+    }
+    {
+     GenericEntity {
+      ID "64693645A6D2546D"
+      components {
+       SCR_ScenarioFrameworkSlotClearArea "{5A633AF525D5B972}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A633AF5368D26A3}" {
+          m_fAreaRadius 25
+          m_sActivatedByThisFaction "RHS_ION"
+         }
+        }
+        m_sObjectToSpawn "{2CB3F93211D06F83}Prefabs/ScenarioFramework/Triggers/TriggerDominance.et"
+       }
+       Hierarchy "{646B6935B9745D44}" {
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,127 @@
+GenericEntity {
+ ID "5A6513F49A728B67"
+ components {
+  SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Search Intel"
+   m_sTaskDescription "Search Intel"
+   m_sTaskPrefab "{9DDDA4BB387EC0B6}Prefabs/ScenarioFramework/Tasks/TaskDeliver.et"
+   m_bPlaceMarkerOnSubjectSlot 1
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+   m_sTaskTitleUpdated "Deliver Intel to Petros"
+   m_sTaskDescriptionUpdated "Deliver Intel to Petros"
+  }
+  Hierarchy "{646CB0CC556382C8}" {
+  }
+ }
+ {
+  $grp GenericEntity {
+   SlotPick1 {
+    ID "6466EDD3526D87BD"
+    components {
+     SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+      m_sObjectToSpawn "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et"
+     }
+     Hierarchy "{646CB0C4BF9F1BBF}" {
+     }
+    }
+    coords 0 0 0
+   }
+   SlotDelivery1 {
+    ID "6466EDD3526D9923"
+    components {
+     RSTC_ScenarioFrameworkSlotDeliveryToPetros "{59F51EA7A10294D2}" {
+      m_aPlugins {
+       SCR_ScenarioFrameworkPluginTrigger "{646CB0C599499DC1}" {
+        m_sActivatedByThisFaction "RHS_ION"
+        m_bOnce 0
+       }
+      }
+      m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/ScenarioFrameworkCharacterTrigger.et"
+      m_bShowDebugShapesInWorkbench 0
+     }
+     Hierarchy "{646CB0CC52D34E62}" {
+     }
+    }
+    coords 0.07 0 0
+   }
+  }
+  $grp GenericEntity : "{F39461F0DF287FBC}Prefabs/ScenarioFramework/TaskLayer/LayerBase.et" {
+   LayerBase1 {
+    ID "646AD4F75A301564"
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+      SlotAI__Random_Group2 {
+       ID "646AD4F75A301561"
+       coords -25.065 -0.779 1.86
+      }
+      SlotAI__Random_Group1 {
+       ID "646AD4F75A301562"
+       coords 14.087 0.53 -14.39
+      }
+      SlotAI__Random_Group3 {
+       ID "646AD4F75A305EFE"
+       coords 40.003 -0.131 13.482
+      }
+     }
+    }
+   }
+   LayerBase2 {
+    ID "646AD4F75A305EFF"
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{9F2A9175455E07F4}Prefabs/ScenarioFramework/Slots/SlotAI_Random_Solo.et" {
+      {
+       ID "646CF013E519821B"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords -2.076 0 0
+      }
+      {
+       ID "646CF013F2A4CFF1"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 0 0 2.851
+      }
+      {
+       ID "646CF013F974D3AB"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 0 0 -2.493
+      }
+      {
+       ID "646CF013FB2A4E7A"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 0 0 1.212
+      }
+      {
+       ID "646CF013FC927023"
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sWPToSpawn "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et"
+        }
+       }
+       coords 3.004 0 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+GenericEntity {
+ ID "6462B78EF9ACC743"
+ components {
+  SCR_ScenarioFrameworkLayerBase "{6462B78C254B7681}" {
+   m_SpawnChildren RANDOM_MULTIPLE
+   m_sFactionKey "OCCUPANT"
+   m_iRandomPercent 50
+   m_bEnableRepeatedSpawn 1
+  }
+  Hierarchy "{6462B78C391ADAD0}" {
+  }
+ }
+ coords 0 0 0
+}

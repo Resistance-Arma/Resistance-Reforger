@@ -1,0 +1,93 @@
+GenericEntity {
+ ID "5A6513F475666863"
+ components {
+  SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+   m_sFactionKey "RHS_ION"
+   m_eActivationType ON_TASKS_INIT
+   m_sTaskTitle "Clear Big Area"
+   m_sTaskDescription "Clear Big Area"
+   m_sTaskPrefab "{A5E8E68E46D3E064}Prefabs/ScenarioFramework/Tasks/TaskClearArea.et"
+   m_TaskType CLEAR
+   m_TaskSubType CLEAR_BIG_AREA
+   m_ReputationWinOnSuccess 200
+   m_ReputationLossOnFailed 75
+  }
+  Hierarchy "{646B6D0001924E4B}" {
+  }
+ }
+ coords -47.357 2.599 -99.683
+ {
+  $grp GenericEntity {
+   Layer_AI1 {
+    ID "64693645A6D2546C"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_SpawnChildren RANDOM_MULTIPLE
+      m_sFactionKey "OCCUPANT"
+      m_iRandomPercent 50
+     }
+     Hierarchy "{646B69342F8CF14A}" {
+     }
+    }
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{5C4BF9660415DBDB}Prefabs/ScenarioFramework/Slots/SlotAI__Random_Group.et" {
+      {
+       ID "646B5CBAAA5870E7"
+       coords -35.528 -0.554 0.925
+      }
+      {
+       ID "646B5CBAAB897156"
+       coords 7.077 2.963 -34.481
+      }
+      {
+       ID "646B5CBAACA036E9"
+       coords -0.669 -4.782 40.448
+      }
+      {
+       ID "646B5CBAADC316C1"
+       coords 56.124 -2.197 2.398
+      }
+      {
+       ID "646B5CBAAEF4EDA5"
+       coords -24.427 -3.277 31.233
+      }
+      {
+       ID "646B5CBAAFEC3505"
+       coords -3.324 -0.803 9.18
+      }
+     }
+    }
+   }
+   {
+    ID "646AD4A55204C6ED"
+    components {
+     SCR_ScenarioFrameworkLayerBase "{646B6D00F5544D7F}" {
+     }
+     Hierarchy "{646B6D00F75CA0E0}" {
+     }
+    }
+    coords -1.727 0.438 -6.085
+    {
+     GenericEntity {
+      ID "646AD4A55204C6EC"
+      components {
+       SCR_ScenarioFrameworkSlotClearArea "{5A633AF525D5B972}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A633AF5368D26A3}" {
+          m_fAreaRadius 80
+          m_sActivatedByThisFaction "RHS_ION"
+         }
+        }
+        m_sObjectToSpawn "{2CB3F93211D06F83}Prefabs/ScenarioFramework/Triggers/TriggerDominance.et"
+       }
+       Hierarchy "{646B6D000B6E28D0}" {
+       }
+      }
+      coords 2.088 -0.419 5.775
+     }
+    }
+   }
+  }
+ }
+}
