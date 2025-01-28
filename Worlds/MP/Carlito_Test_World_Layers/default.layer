@@ -38,22 +38,7 @@ RSTC_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/GameMode/R
 }
 RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.et" {
  components {
-  RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
-   Enabled 0
-  }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
-   Enabled 1
-   components {
-    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
-     Enabled 1
-    }
-    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
-     Enabled 1
-    }
-    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
-     Enabled 1
-    }
-   }
   }
  }
  coords 161.559 1 105.295
