@@ -1,7 +1,7 @@
 SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
  coords 134.078 1 93.708
 }
-SCR_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/RSTC_FactionManager.et" {
+RSTC_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/GameMode/RSTC_FactionManager.et" {
  coords 141.015 1 104.238
  Factions {
   SCR_Faction "{56DEAC40D2DBC8B1}" {
@@ -36,13 +36,32 @@ SCR_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/RSTC_Factio
   }
  }
 }
-RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/RSTC_GameMode.et" {
+RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.et" {
+ components {
+  RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   Enabled 0
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 1
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 1
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 1
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 1
+    }
+   }
+  }
+ }
  coords 161.559 1 105.295
 }
 ScriptedChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
  coords 146.077 1 109.272
 }
-SCR_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/RSTC_LoadoutManager.et" {
+SCR_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/GameMode/RSTC_LoadoutManager.et" {
  coords 154.984 1 99.908
  m_aPlayerLoadouts {
   SCR_PlayerArsenalLoadout "{568CC9D1BC0FCCF3}" {
@@ -50,10 +69,10 @@ SCR_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/RSTC_LoadoutManager.et" {
   }
  }
 }
-SCR_BaseTaskManager : "{6ABDAF9D7DE95FA5}Prefabs/RSTC_TaskManager.et" {
+SCR_BaseTaskManager : "{6ABDAF9D7DE95FA5}Prefabs/GameMode/RSTC_TaskManager.et" {
  coords 160.344 1 108.368
 }
-GenericEntity : "{7539A3D14B703C51}Prefabs/ScenarioFramework/Cities.et" {
+GenericEntity Cities : "{7539A3D14B703C51}Prefabs/ScenarioFramework/Cities.et" {
  coords 139.882 1 109.266
  {
   GenericEntity City1 : "{FF0093D414C889DA}Prefabs/ScenarioFramework/City.et" {

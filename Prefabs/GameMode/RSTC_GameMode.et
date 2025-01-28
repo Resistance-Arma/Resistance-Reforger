@@ -44,14 +44,10 @@ RSTC_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
   }
   RSTC_PlayerManagerComponent "{6474274BC46E6CB3}" {
   }
-  RSTC_ResistanceEditorManagerComponent "{6472C96C4749419E}" {
-   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
-   m_EditorPrefab "{E4E23BC4C425A16B}Prefabs/Editor/Modes/EditorModeResistance.et"
-  }
   RSTC_ResistanceFactionManager "{6474274BCED28F03}" {
   }
   RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
-   m_rDefaultPrefab "{968A851994DCBEA7}Prefabs/Characters/RSTC_Player_Character.et"
+   m_rDefaultPrefab "{6EEF180CE8B9C77F}Prefabs/Characters/RSTC_Character_Player.et"
   }
   RSTC_TasksManagerComponent "{646D6EAB9EF1E1E5}" {
   }
@@ -90,9 +86,5 @@ RSTC_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
  PlayerControllerPrefab "{225E51284CC95CFA}Prefabs/Characters/Core/DefaultPlayerControllerMP.et"
  m_aDisabledResourceTypes {
   0
- }
- m_StartGameUIContext RSTC_StartGameContext "{64750B39583AF14A}" {
-  m_Layout "{B67401B95882FBBC}UI/Layouts/Menu/StartGameMenu.layout"
-  m_sContextName "ResistanceStartGameContext"
  }
 }

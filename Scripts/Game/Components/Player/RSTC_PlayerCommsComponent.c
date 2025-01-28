@@ -23,6 +23,22 @@ class RSTC_PlayerCommsComponent: RSTC_Component
 	}
 	
 
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+    void Rpc_ShowStartGameUI()
+    {
+		Print("Show Rpc_ShowStartGameUI on Admin !");
+
+		
+		RSTC_UIManagerComponent uimanager = RSTC_UIManagerComponent.Cast(GetOwner().FindComponent(RSTC_UIManagerComponent));
+		if(!uimanager) return;
+		
+		RSTC_StartGameContext context = RSTC_StartGameContext.Cast(uimanager.GetContext(RSTC_StartGameContext));
+		if(!context) return;
+		
+		uimanager.ShowContext(RSTC_StartGameContext);
+    }
+	
+
 	//ECONOMY
 	
 	void AddPlayerMoney(int playerId, int amount, bool doEvent=false)

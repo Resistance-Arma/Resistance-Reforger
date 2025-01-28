@@ -13,6 +13,8 @@ class RSTC_UIManagerComponent: RSTC_Component
 	{
 		super.OnPostInit(owner);	
 		
+		Print("====================== RSTC_UIManagerComponent ================");
+		
 		if(SCR_Global.IsEditMode()) return;	
 		
 		SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast( owner.FindComponent(SCR_CharacterControllerComponent) );		

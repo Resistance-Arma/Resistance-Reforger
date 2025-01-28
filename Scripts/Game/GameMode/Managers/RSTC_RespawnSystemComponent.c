@@ -21,7 +21,8 @@ class RSTC_RespawnSystemComponent : EPF_BaseRespawnSystemComponent
 	protected override void OnUidAvailable(int playerId)
 	{
 		RSTC_GameMode mode = RSTC_GameMode.Cast(GetGame().GetGameMode());
-		if(!mode.IsInitialized())
+		
+		if(!mode.IsInitialized() && !mode.IsWaitingForAdminToStart())
 		{
 			//Game has not started yet
 			OnPlayerRegisterFailed(playerId);
@@ -44,19 +45,21 @@ class RSTC_RespawnSystemComponent : EPF_BaseRespawnSystemComponent
 	
 	void OnPlayerRegisterFailed(int playerId)
 	{
-		int delay = Math.RandomFloat(900, 1100);
-		GetGame().GetCallqueue().CallLater(OnPlayerRegistered_S, delay, false, playerId);
+		GetGame().GetCallqueue().CallLater(OnPlayerRegistered_S, 1000, false, playerId);
 	}
 	
 	protected override void GetCreationPosition(int playerId, string characterPersistenceId, out vector position, out vector yawPitchRoll)
 	{
-		
 		RSTC_NpcPetros petros = RSTC_Global.GetPetros();
 		if(!petros)
+		{
+			position = "100 0 100";
+			yawPitchRoll = "0 0 0";
 			return;
-		
+		}
+
 	    vector petrosPosition = petros.GetOrigin();
-	    if (!petrosPosition || petrosPosition == vector.Zero)
+	    if (petrosPosition == vector.Zero)
 	    {
 	        Print("RSTC_HQManagerComponent::Petros position is invalid. Aborting spawn.", LogLevel.ERROR);
 	        return;
@@ -82,7 +85,7 @@ class RSTC_RespawnSystemComponent : EPF_BaseRespawnSystemComponent
 		array<ResourceName> doneStartingItems = {};
 		RSTC_PlayerData player = RSTC_PlayerData.Get(characterPersistenceId);
 			
-		if(storageManager && factionAffiliationManager)
+		if(storageManager && factionAffiliationManager && player)
 		{
 			PrintFormat(" === OnCharacterCreated %1 : ", RSTC_Global().GetFactionManager().GetResistanceFaction().GetFactionKey());
 			factionAffiliationManager.SetAffiliatedFaction(RSTC_Global().GetFactionManager().GetResistanceFaction());	

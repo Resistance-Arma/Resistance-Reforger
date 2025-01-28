@@ -4,6 +4,12 @@ SCR_ChimeraCharacter : "{3A2FBAD5B929AC4B}Prefabs/Characters/Factions/CIV/Generi
   RSTC_PlayerCommsComponent "{647727E62CAB4AF2}" {
   }
   RSTC_UIManagerComponent "{647727E6178650B5}" {
+   m_aContexts {
+    RSTC_StartGameContext "{64788C47056B0ED4}" {
+     m_Layout "{B67401B95882FBBC}UI/Layouts/Menu/StartGameMenu.layout"
+     m_sContextName "ResistanceStartGameContext"
+    }
+   }
   }
  }
  coords 3186.386 4.187 1190.785
