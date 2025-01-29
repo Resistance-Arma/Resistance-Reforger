@@ -15,7 +15,7 @@ class RSTC_UIManagerComponent: RSTC_Component
 				
 		if(SCR_Global.IsEditMode()) return;	
 		
-		SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast( owner.FindComponent(SCR_CharacterControllerComponent) );		
+		SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast(owner.FindComponent(SCR_CharacterControllerComponent) );		
 				
 		if(controller){
 			m_Controller = controller;

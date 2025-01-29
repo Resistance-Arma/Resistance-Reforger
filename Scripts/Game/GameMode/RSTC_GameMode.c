@@ -209,10 +209,8 @@ class RSTC_GameMode : SCR_BaseGameMode
 				RSTC_PlayerCommsComponent playerCom = RSTC_PlayerCommsComponent.Cast(playerEntity.FindComponent(RSTC_PlayerCommsComponent));
 		        if (playerCom)
 		        {
-					PrintFormat("playerCom playerCom playerCom: %1", playerId);
-					
 		            PrintFormat("Sent RPC_ShowStartGameUI to client for player ID: %1", playerId);
-					playerCom.Rpc_ShowStartGameUI();
+					playerCom.ShowStartGameUI();
 		        }
 			}
 			
@@ -307,7 +305,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		        {
 		            // Envoie l'RPC pour afficher l'UI sur le client
 		            PrintFormat("Sent RPC_ShowStartGameUI to client for player ID: %1", playerId);
-					playerCom.Rpc_ShowStartGameUI();
+					playerCom.ShowStartGameUI();
 		        }
 			}
 		}

@@ -4,7 +4,8 @@ modded class EPF_BaseRespawnSystemComponent
 	{
 		//PrintFormat("EPF_BaseRespawnSystemComponent.OnPlayerRegistered_S(%1)", playerId);
 
-		if (RplSession.Mode() != RplMode.Dedicated || GetGame().GetBackendApi().GetBackendEnv() == "invalid")
+		
+		if (RplSession.Mode() != RplMode.Dedicated || GetGame().GetServerInfo().GetName().IsEmpty())
 		{
 			WaitForUid(playerId);
 		}

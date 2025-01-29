@@ -26,18 +26,32 @@ class RSTC_PlayerCommsComponent: RSTC_Component
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
     void Rpc_ShowStartGameUI()
     {
-		Print("Show Rpc_ShowStartGameUI on Admin !");
-
+		 Print("[RSTC_PlayerCommsComponent] Rpc_ShowStartGameUI received on admin client!");
+    
+        RSTC_UIManagerComponent uimanager = RSTC_UIManagerComponent.Cast(GetOwner().FindComponent(RSTC_UIManagerComponent));
+        if (!uimanager)
+        {
+            Print("[RSTC_PlayerCommsComponent] RSTC_UIManagerComponent not found!");
+            return;
+        }
+    
+        RSTC_StartGameContext context = RSTC_StartGameContext.Cast(uimanager.GetContext(RSTC_StartGameContext));
+        if (!context)
+        {
+            Print("[RSTC_PlayerCommsComponent] RSTC_StartGameContext not found!");
+            return;
+        }
+    
+        uimanager.ShowContext(RSTC_StartGameContext);
 		
-		RSTC_UIManagerComponent uimanager = RSTC_UIManagerComponent.Cast(GetOwner().FindComponent(RSTC_UIManagerComponent));
-		if(!uimanager) return;
-		
-		RSTC_StartGameContext context = RSTC_StartGameContext.Cast(uimanager.GetContext(RSTC_StartGameContext));
-		if(!context) return;
-		
-		uimanager.ShowContext(RSTC_StartGameContext);
+        // This will execute on the client's machine
+      
     }
-	
+
+    void ShowStartGameUI()
+    {
+         Rpc(Rpc_ShowStartGameUI);
+    }
 
 	//ECONOMY
 	
