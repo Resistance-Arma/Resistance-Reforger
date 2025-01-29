@@ -37,6 +37,21 @@ class RSTC_GameMode : SCR_BaseGameMode
 		return m_bWaitingAdminToStartGame; 
 	}
 	
+	override void OnPlayerAuditSuccess(int iPlayerID)
+	{
+
+		Print("SCR_BaseGameMode::OnPlayerAuditSuccess - playerId: " + iPlayerID, LogLevel.DEBUG);
+
+		super.OnPlayerAuditSuccess(iPlayerID);
+		m_OnPlayerAuditSuccess.Invoke(iPlayerID);
+		
+		// Dispatch event to child components
+		foreach (SCR_BaseGameModeComponent comp : m_aAdditionalGamemodeComponents)
+		{
+			comp.OnPlayerAuditSuccess(iPlayerID);
+		}
+	}
+	
     // Surcharge de la méthode EOnInit pour initialiser les composants
     override void EOnInit(IEntity owner)
     {
@@ -45,7 +60,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		m_persistence = RSTC_PersistenceManagerComponent.Cast(FindComponent(RSTC_PersistenceManagerComponent));
 		if(m_persistence)
 		{
-			m_persistence.WipeSave()
+			 m_persistence.WipeSave()
 		}
         InitializeGame(owner);
     }
@@ -95,11 +110,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		if(!IsMaster()) {			
 			return;
 		}
-		
-		Print("------------------------ WESSSSSSSSSSSSSSSSHHHHHH ------------------------");
-
-		m_bGameInitialized = true;
-		
+				
 		m_persistence = RSTC_PersistenceManagerComponent.Cast(FindComponent(RSTC_PersistenceManagerComponent));
 		if(m_persistence)
 		{
@@ -135,18 +146,6 @@ class RSTC_GameMode : SCR_BaseGameMode
 	
 	void DoStartNewGame()
 	{
-		bool isDedicated = RplSession.Mode() == RplMode.Dedicated;
-#ifdef WORKBENCH
-		isDedicated = true;
-#endif
-		RSTC_ConfigManagerComponent config = RSTC_Global.GetConfig();
-		m_configManager = config;
-		
-		if(isDedicated)
-		{
-			Print("[Resistance] Running on Dedicated Server !");
-		}
-		
 		RestartSession();
 	}
 	
@@ -204,6 +203,19 @@ class RSTC_GameMode : SCR_BaseGameMode
 
 		if(SCR_Global.IsAdminRole(roleFlags))
 		{	
+			IEntity playerEntity = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
+			if(!m_bGameInitialized && m_bWaitingAdminToStartGame && playerEntity)
+			{					
+				RSTC_PlayerCommsComponent playerCom = RSTC_PlayerCommsComponent.Cast(playerEntity.FindComponent(RSTC_PlayerCommsComponent));
+		        if (playerCom)
+		        {
+					PrintFormat("playerCom playerCom playerCom: %1", playerId);
+					
+		            PrintFormat("Sent RPC_ShowStartGameUI to client for player ID: %1", playerId);
+					playerCom.Rpc_ShowStartGameUI();
+		        }
+			}
+			
 			string persId = m_playerManager.GetPersistentIDFromPlayerID(playerId);
 			RSTC_PlayerData player = m_playerManager.GetPlayer(persId);
 			if(!player) return;
@@ -286,10 +298,8 @@ class RSTC_GameMode : SCR_BaseGameMode
 	{
 	
         SCR_PlayerController playerController = SCR_PlayerController.Cast(GetGame().GetPlayerManager().GetPlayerController(playerId));
-		
 		if(playerController && playerController.HasRole(EPlayerRole.ADMINISTRATOR))
 		{
-			PrintFormat("======== Admin Spawn in Game ! ========= m_bWaitingAdminToStartGame %1 === m_bGameInitialized %2",m_bWaitingAdminToStartGame,m_bGameInitialized);
 			if(!m_bGameInitialized && m_bWaitingAdminToStartGame)
 			{	
 				RSTC_PlayerCommsComponent playerCom = RSTC_PlayerCommsComponent.Cast(controlledEntity.FindComponent(RSTC_PlayerCommsComponent));
@@ -308,7 +318,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 	
 	void OnPlayerSpawnedLocal(string playerId)
 	{
-		if(!m_aHintedPlayers.Contains(playerId))
+		if(!m_aHintedPlayers.Contains(playerId) && m_bGameInitialized)
 		{
 			SCR_HintManagerComponent.GetInstance().ShowCustom("Welcome","Welcome description !",20);
 			m_aHintedPlayers.Insert(playerId);

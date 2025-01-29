@@ -22,6 +22,9 @@ SCR_AIWorld AIWorld_Arland : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et
   }
  }
 }
+ScriptedChatEntity {
+ coords 3188.605 4.14 1190.32
+}
 PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 3131.62 14.212 2715.391
 }
@@ -53,6 +56,7 @@ RSTC_GameMode RSTC_GameMode : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.
   RSTC_ConfigManagerComponent "{646D6EAA676183A6}" {
    m_pSlotCivilPrefabToSpawn "{CDBA82DDC7940810}Prefabs/ScenarioFramework/Slots/SlotAI_Civil.et"
    m_sDefaultSupportedFactionKey "FIA"
+   m_sResistanceFaction "US"
    m_iRespawnCharge 50
    m_pPetrosPrefab "{4F5C61D24B4931E3}Prefabs/NPC/NPC_Petros.et"
    m_sInitialPetrosPosition 3190.34 6.15 1188.17
@@ -66,6 +70,7 @@ RSTC_GameMode RSTC_GameMode : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.
    }
   }
   RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   Enabled 0
    m_rDefaultPrefab "{6EEF180CE8B9C77F}Prefabs/Characters/RSTC_Character_Player.et"
   }
   SCR_CampaignBuildingManagerComponent "{646F5B1E9E083AC5}" {
@@ -78,16 +83,16 @@ RSTC_GameMode RSTC_GameMode : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.
    m_sGadgetMapConfigPath "{C9B9E06AB1D2A684}Configs/Map/MapFullscreen.conf"
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
-   Enabled 0
+   Enabled 1
    components {
     SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
-     Enabled 0
+     Enabled 1
     }
     SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
-     Enabled 0
+     Enabled 1
     }
     SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
-     Enabled 0
+     Enabled 1
     }
    }
    m_SpawnLogic SCR_AutoSpawnLogic "{646D6EA8A6CCF4D4}" {
@@ -164,6 +169,9 @@ SCR_LoadoutManager RSTC_LoadoutManager : "{34CFAEBBED87BF3B}Prefabs/GameMode/RST
    m_sLoadoutResource "{FD5A1A2FA455FAEE}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_Rifleman.et"
   }
  }
+}
+SCR_SpawnPoint : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
+ coords 3196.936 4.11 1187.974
 }
 SCR_BaseTaskManager RSTC_TaskManager : "{6ABDAF9D7DE95FA5}Prefabs/GameMode/RSTC_TaskManager.et" {
  coords 3146.681 12.173 2756.58

@@ -38,7 +38,11 @@ RSTC_FactionManager RSTC_FactionManager2 : "{7F3C781C4445F0AF}Prefabs/GameMode/R
 }
 RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode.et" {
  components {
-  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+  RSTC_ConfigManagerComponent "{646D6EAA676183A6}" {
+   m_sResistanceFaction "US"
+  }
+  RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   Enabled 1
   }
  }
  coords 161.559 1 105.295

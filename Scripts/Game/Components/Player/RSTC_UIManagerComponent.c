@@ -12,9 +12,7 @@ class RSTC_UIManagerComponent: RSTC_Component
 	override void OnPostInit(IEntity owner)
 	{
 		super.OnPostInit(owner);	
-		
-		Print("====================== RSTC_UIManagerComponent ================");
-		
+				
 		if(SCR_Global.IsEditMode()) return;	
 		
 		SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast( owner.FindComponent(SCR_CharacterControllerComponent) );		

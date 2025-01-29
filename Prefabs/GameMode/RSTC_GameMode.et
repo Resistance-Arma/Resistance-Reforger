@@ -47,6 +47,7 @@ RSTC_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
   RSTC_ResistanceFactionManager "{6474274BCED28F03}" {
   }
   RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
+   Enabled 0
    m_rDefaultPrefab "{6EEF180CE8B9C77F}Prefabs/Characters/RSTC_Character_Player.et"
   }
   RSTC_TasksManagerComponent "{646D6EAB9EF1E1E5}" {
@@ -80,6 +81,9 @@ RSTC_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
    m_SpawnLogic SCR_AutoSpawnLogic "{646D6EA8A6CCF4D4}" {
     m_sForcedFaction "US"
    }
+  }
+  EPF_BasicRespawnSystemComponent "{64795E109BC822B0}" {
+   m_rDefaultPrefab "{6EEF180CE8B9C77F}Prefabs/Characters/RSTC_Character_Player.et"
   }
  }
  coords 3147.381 12.208 2756.132
