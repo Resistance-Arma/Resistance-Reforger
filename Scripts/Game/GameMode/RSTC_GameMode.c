@@ -32,9 +32,9 @@ class RSTC_GameMode : SCR_BaseGameMode
 		return m_bGameInitialized;
 	}
 	
-	bool IsWaitingForAdminToStart()
+	bool IsGameStarted()
 	{
-		return m_bWaitingAdminToStartGame; 
+		return m_bGameStarted; 
 	}
 	
 	override void OnPlayerAuditSuccess(int iPlayerID)
@@ -60,7 +60,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		m_persistence = RSTC_PersistenceManagerComponent.Cast(FindComponent(RSTC_PersistenceManagerComponent));
 		if(m_persistence)
 		{
-			 m_persistence.WipeSave()
+			// m_persistence.WipeSave()
 		}
         InitializeGame(owner);
     }
@@ -146,7 +146,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 	
 	void DoStartNewGame()
 	{
-		RestartSession();
+		DoStartGame();
 	}
 	
 	
@@ -180,6 +180,12 @@ class RSTC_GameMode : SCR_BaseGameMode
 			Print("[Resistance] Starting Resistance Faction");
 			m_resistanceFactionManager.PostGameStart();
 		}
+		
+		if(m_playerManager)
+		{
+			Print("[Resistance] Starting Player");
+		  	GetGame().GetCallqueue().CallLater(m_playerManager.PostGameStart, 5000, false);
+		}
 
 		m_bGameInitialized = true;
 
@@ -210,7 +216,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		        if (playerCom)
 		        {
 		            PrintFormat("Sent RPC_ShowStartGameUI to client for player ID: %1", playerId);
-					playerCom.ShowStartGameUI();
+					playerCom.ShowStartGameUI(); 
 		        }
 			}
 			
@@ -223,45 +229,6 @@ class RSTC_GameMode : SCR_BaseGameMode
 			}
 		}
 	}
-	
-	void PreparePlayer(int playerId, string persistentId)
-	{
-		if(!Replication.IsServer()) return;
-
-		m_playerManager.SetupPlayer(playerId, persistentId);
-		RSTC_PlayerData player = m_playerManager.GetPlayer(persistentId);
-
-
-		if(!player.isOfficer && RplSession.Mode() == RplMode.None)
-		{
-			m_resistanceFactionManager.AddOfficer(playerId);
-		}
-
-		if(player.initialized)
-		{
-			if(m_aInitializedPlayers.Contains(persistentId))
-			{
-				m_economyManager.ChargeRespawn(playerId);
-			}
-			else
-			{
-				Print("[Resistance] Preparing returning player: " + persistentId);
-				m_aInitializedPlayers.Insert(persistentId);
-			}
-			player.firstSpawn = false;
-		}
-		else
-		{
-			//New player
-			Print("[Resistance] Preparing NEW player: " + persistentId);
-			int cash = RSTC_Global.GetConfig().GetStartingMoney();
-			m_economyManager.AddPlayerMoney(playerId, cash);
-
-			player.initialized = true;
-			player.firstSpawn = true;
-			m_aInitializedPlayers.Insert(persistentId);
-		}
-	}	
 	
 	protected override void OnPlayerDisconnected(int playerId, KickCauseCode cause, int timeout)
 	{
@@ -306,7 +273,7 @@ class RSTC_GameMode : SCR_BaseGameMode
 		            // Envoie l'RPC pour afficher l'UI sur le client
 		            PrintFormat("Sent RPC_ShowStartGameUI to client for player ID: %1", playerId);
 					playerCom.ShowStartGameUI();
-		        }
+		        }	
 			}
 		}
 

@@ -40,6 +40,7 @@ RSTC_GameMode RSTC_GameMode1 : "{8306A24810CF61C0}Prefabs/GameMode/RSTC_GameMode
  components {
   RSTC_ConfigManagerComponent "{646D6EAA676183A6}" {
    m_sResistanceFaction "US"
+   m_sInitialPetrosPosition 140.73 3.57 97.34
   }
   RSTC_RespawnSystemComponent "{6474C31E2293140A}" {
    Enabled 1
@@ -69,10 +70,15 @@ GenericEntity Cities : "{7539A3D14B703C51}Prefabs/ScenarioFramework/Cities.et" {
   }
  }
 }
+GenericEntity SlotAI_Civil1 : "{CDBA82DDC7940810}Prefabs/ScenarioFramework/Slots/SlotAI_Civil.et" {
+ coords 139.759 1 98.66
+}
 GenericEntity : "{FCE3FA547AA13ECC}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V2.et" {
  components {
   RSTC_MovableEntityComponent "{6472C975A1F1A9E4}" {
    m_placementType XYZ
+  }
+  SCR_EditablePreviewComponent "{647C15A41A58FA21}" {
   }
   ActionsManagerComponent "{6472124087A87C8A}" {
    ActionContexts {

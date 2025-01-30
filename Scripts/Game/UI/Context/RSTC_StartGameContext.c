@@ -71,21 +71,21 @@ class RSTC_StartGameContext : RSTC_UIContext
 	{
 		Faction data = Faction.Cast(spinner.GetItemData(index));
 		if(!data) return;
-		RSTC_Global.GetConfig().SetOccupyingFactionKey(data.GetFactionKey());	
+		RSTC_Global.GetServer().SetOccupyingFactionKey(data.GetFactionKey());	
 	}
 	
 	protected void OnSpinResistanceFaction(SCR_SpinBoxComponent spinner, int index)
 	{
 		Faction data = Faction.Cast(spinner.GetItemData(index));
 		if(!data) return;
-		RSTC_Global.GetConfig().SetResistanceFactionKey(data.GetFactionKey());	
+		RSTC_Global.GetServer().SetResistanceFactionKey(data.GetFactionKey());	
 	}
 	
 	protected void OnSpinInvaderFaction(SCR_SpinBoxComponent spinner, int index)
 	{
 		Faction data = Faction.Cast(spinner.GetItemData(index));
 		if(!data) return;
-		RSTC_Global.GetConfig().SetInvaderFactionKey(data.GetFactionKey());	
+		RSTC_Global.GetServer().SetInvaderFactionKey(data.GetFactionKey());	
 	}
 	
 	protected void StartGame()
@@ -102,8 +102,6 @@ class RSTC_StartGameContext : RSTC_UIContext
 
         CloseLayout();
     
-        RSTC_GameMode mode = RSTC_GameMode.Cast(GetGame().GetGameMode());
-    
-        mode.DoStartNewGame();
+        RSTC_Global.GetServer().StartNewGame();
     }
 }

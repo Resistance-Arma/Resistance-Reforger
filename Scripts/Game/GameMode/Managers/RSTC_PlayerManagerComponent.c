@@ -36,6 +36,103 @@ class RSTC_PlayerManagerComponent: RSTC_Component
 		return null;
 	}
 	
+	void PostGameStart()
+	{	
+		array<int> playersId;
+
+		foreach (int playerId: m_mPlayerIDs)
+		{
+			string playerPersistenceId = GetPersistentIDFromPlayerID(playerId);
+			if(!playerPersistenceId)
+			{
+				PrintFormat("RSTC_PlayerManagerComponent PostGameStart No Player with PersistenceId %1 detected", playerPersistenceId);
+				continue;
+			}
+				
+			PreparePlayerForGame(playerId, playerPersistenceId, true);
+		}
+
+	}
+	
+	
+	void PreparePlayerForGame(int playerId, string characterPersistenceId, bool teleportToPetros = false)
+	{
+		if(!Replication.IsServer()) return;
+		if(!RSTC_Global().GetGameMode().IsGameStarted()) 
+		{
+			PrintFormat("-- Prepare For player Cancel, Game is not started --");
+			return;
+		}
+		
+		PrintFormat("RSTC_PlayerManagerComponent: PreparePlayerForGame for PersistenceId %1 ",  characterPersistenceId);
+
+		IEntity playerEntity = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
+		if (!playerEntity)
+		{
+			PrintFormat("RSTC_PlayerManagerComponent:: PostGameStart No Player with ID %1 detected", playerId);
+			return;
+		}
+		
+ 		InventoryStorageManagerComponent storageManager = EPF_Component<InventoryStorageManagerComponent>.Find(playerEntity);
+		FactionAffiliationComponent factionAffiliationManager = EPF_Component<FactionAffiliationComponent>.Find(playerEntity);
+		
+		array<ResourceName> doneStartingItems = {};
+		RSTC_PlayerData player = RSTC_PlayerData.Get(characterPersistenceId);
+		
+		if(player.initialized)
+		{
+			PrintFormat("RSTC_PlayerManagerComponent:: Player with ID %1 alreay initialized", playerId);
+			return;
+		}
+			
+		if(storageManager && factionAffiliationManager)
+		{
+			factionAffiliationManager.SetAffiliatedFaction(RSTC_Global().GetFactionManager().GetResistanceFaction());	
+			player.firstSpawn = false;
+			player.initialized = true;
+		}		
+		
+		if(!player.isOfficer && RplSession.Mode() == RplMode.None)
+		{
+			RSTC_Global().GetResistanceFactionManager().AddOfficer(playerId);
+		}
+		
+		
+		if(!teleportToPetros)
+		{
+	        Print("RSTC_PlayerManagerComponent:: No Teleportation to Petros ask!", LogLevel.ERROR);
+	        return;
+	    }
+		
+		SCR_ChimeraCharacter petros = RSTC_Global.GetPetros();
+		if(!petros)
+		{
+	        Print("Fuck Petros, where are you, we need you ! ", LogLevel.ERROR);
+	        return;
+	    }
+		
+		
+		vector petrosPosition = petros.GetOrigin();
+	    if (petrosPosition == vector.Zero)
+	    {
+	        Print("RSTC_PlayerManagerComponent::Petros position is invalid. Aborting spawn.", LogLevel.ERROR);
+	        return;
+	    }
+		
+		SCR_EditableEntityComponent editablePlayer = SCR_EditableEntityComponent.Cast(playerEntity.FindComponent(SCR_EditableEntityComponent));
+		if (!editablePlayer)
+		{
+		 	Print("RSTC_PlayerManagerComponent:: No SCR_EditableEntityComponent  Found in the player entity", LogLevel.ERROR);
+	        return;
+		}
+				
+		vector petrosTransform[4];
+		petros.GetTransform(petrosTransform);
+	    editablePlayer.SetTransform(petrosTransform);
+		
+		PrintFormat("RSTC_PlayerManagerComponent:: Teleported player ID: %1 with success", playerId);
+	}
+	
 	bool LocalPlayerIsOfficer()
 	{
 		int localId = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(SCR_PlayerController.GetLocalControlledEntity());

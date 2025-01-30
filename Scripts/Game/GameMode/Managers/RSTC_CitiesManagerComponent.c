@@ -1,4 +1,4 @@
-class RSTC_CitiesManagerComponentClass : RSTC_ComponentClass
+class RSTC_CitiesManagerComponentClass: RSTC_ComponentClass
 {
 };
 

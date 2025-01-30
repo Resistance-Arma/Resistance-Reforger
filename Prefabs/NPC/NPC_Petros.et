@@ -1,6 +1,9 @@
 RSTC_NpcPetros : "{64DEA0BB203DBA50}Prefabs/Characters/Factions/INDFOR/RHS_ION_Coy/Character_RHS_ION_Coy_BaseLoadout.et" {
  ID "520EC961A090B1EE"
  components {
+  EPF_PersistenceComponent "{5A12D8F4DFED6D84}" {
+   m_bSelfSpawn 1
+  }
   FactionAffiliationComponent "{6239642BBB275066}" {
    "faction affiliation" ""
   }

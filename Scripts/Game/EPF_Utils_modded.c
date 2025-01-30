@@ -17,7 +17,8 @@ modded class EPF_Utils
 		Print("DEBUG LINE | " + FilePath.StripPath(__FILE__) + ":" + __LINE__, LogLevel.DEBUG);		
 		if (!uid)
 		{
-			if (RplSession.Mode() != RplMode.Dedicated || GetGame().GetServerInfo().GetName().IsEmpty())
+
+			if (RplSession.Mode() != RplMode.Dedicated || !GetGame().GetServerInfo() || GetGame().GetServerInfo().GetName().IsEmpty())
 			{
 				// Peer tool supportR
 				uid = string.Format("bbbbdddd-0000-0000-0000-%1", playerId.ToString(12));

@@ -22,39 +22,83 @@ class RSTC_PlayerCommsComponent: RSTC_Component
 		}
 	}
 	
-
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-    void Rpc_ShowStartGameUI()
-    {
-		 Print("[RSTC_PlayerCommsComponent] Rpc_ShowStartGameUI received on admin client!");
-    
-        RSTC_UIManagerComponent uimanager = RSTC_UIManagerComponent.Cast(GetOwner().FindComponent(RSTC_UIManagerComponent));
-        if (!uimanager)
-        {
-            Print("[RSTC_PlayerCommsComponent] RSTC_UIManagerComponent not found!");
-            return;
-        }
-    
-        RSTC_StartGameContext context = RSTC_StartGameContext.Cast(uimanager.GetContext(RSTC_StartGameContext));
-        if (!context)
-        {
-            Print("[RSTC_PlayerCommsComponent] RSTC_StartGameContext not found!");
-            return;
-        }
-    
-        uimanager.ShowContext(RSTC_StartGameContext);
-		
-        // This will execute on the client's machine
-      
-    }
-
-    void ShowStartGameUI()
-    {
-         Rpc(Rpc_ShowStartGameUI);
-    }
-
-	//ECONOMY
+	void Rpc_ShowStartGameUI()
+	{
+	    Print("[RSTC_PlayerCommsComponent] Rpc_ShowStartGameUI received on admin client!");
 	
+	    RSTC_UIManagerComponent uimanager = RSTC_UIManagerComponent.Cast(GetOwner().FindComponent(RSTC_UIManagerComponent));
+	    if (!uimanager)
+	        return;
+	
+	    RSTC_StartGameContext context = RSTC_StartGameContext.Cast(uimanager.GetContext(RSTC_StartGameContext));
+	    if (!context)
+	        return;
+			
+		if(!context.IsActive())
+	    	uimanager.ShowContext(RSTC_StartGameContext);
+	}
+	
+	void ShowStartGameUI()
+	{
+	    Rpc(Rpc_ShowStartGameUI);
+	}
+	
+	// Config
+	
+	void StartNewGame()
+	{
+	    Rpc(RpcAsk_StartNewGame);
+	}
+	
+	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
+    void RpcAsk_StartNewGame()
+    {
+        RSTC_GameMode gameMode = RSTC_GameMode.Cast(GetGame().GetGameMode());
+        if (gameMode)
+            gameMode.DoStartNewGame();
+    }
+	
+	void SetResistanceFactionKey(FactionKey factionKey)
+	{
+	    Rpc(RpcAsk_SetResistanceFactionKey, factionKey);
+	}
+
+	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
+    void RpcAsk_SetResistanceFactionKey(FactionKey factionKey)
+    {
+        RSTC_ConfigManagerComponent config = RSTC_ConfigManagerComponent.GetInstance();
+        if (config)
+            config.SetResistanceFactionKey(factionKey);
+    }
+
+	void SetInvaderFactionKey(FactionKey factionKey)
+	{
+	    Rpc(RpcAsk_SetInvaderFactionKey, factionKey);
+	}
+	
+    [RplRpc(RplChannel.Reliable, RplRcver.Server)]
+    void RpcAsk_SetInvaderFactionKey(FactionKey factionKey)
+    {
+        RSTC_ConfigManagerComponent config = RSTC_ConfigManagerComponent.GetInstance();
+        if (config)
+            config.SetInvaderFactionKey(factionKey);
+    }
+
+	void SetOccupyingFactionKey(FactionKey factionKey)
+	{
+	    Rpc(RpcAsk_SetOccupyingFactionKey, factionKey);
+	}
+	
+    [RplRpc(RplChannel.Reliable, RplRcver.Server)]
+    void RpcAsk_SetOccupyingFactionKey(FactionKey factionKey)
+    {
+        RSTC_ConfigManagerComponent config = RSTC_ConfigManagerComponent.GetInstance();
+        if (config)
+            config.SetOccupyingFactionKey(factionKey);
+    }
+	
+	//ECONOMY
 	void AddPlayerMoney(int playerId, int amount, bool doEvent=false)
 	{
 		Rpc(RpcAsk_AddPlayerMoney, playerId, amount, doEvent);

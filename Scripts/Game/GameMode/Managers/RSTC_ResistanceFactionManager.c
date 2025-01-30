@@ -1,6 +1,6 @@
 class RSTC_ResistanceFactionManagerClass: RSTC_ComponentClass
 {	
-}
+};
 
 
 class RSTC_ResistanceFactionManager: RSTC_Component
@@ -39,8 +39,6 @@ class RSTC_ResistanceFactionManager: RSTC_Component
 			
 	}
 	
-	
-	
 	void PostGameStart()
 	{
 	 	vector postion = RSTC_Global.GetConfig().GetInitialPetrosPosition();
@@ -48,9 +46,8 @@ class RSTC_ResistanceFactionManager: RSTC_Component
 			postion = vector.Zero;
 		
 		RSTC_NpcPetros.SpawnPetros(postion);
-		PlaceHQAtPetrosPosition()
+		PlaceHQAtPetrosPosition();
 	}	
-	
 	
 	bool IsOfficer(int playerId)
 	{
@@ -93,7 +90,7 @@ class RSTC_ResistanceFactionManager: RSTC_Component
 	{
 	    Print("RSTC_HQManagerComponent::PlaceHQNearPetros started.", LogLevel.DEBUG);
 	
-		RSTC_NpcPetros petros = RSTC_Global.GetPetros();
+		SCR_ChimeraCharacter petros = RSTC_Global.GetPetros();
 		if(!petros)
 			return;
 		

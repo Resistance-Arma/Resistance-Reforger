@@ -18,7 +18,7 @@ class RSTC_Global : Managed
 	
 	static RSTC_NpcPetros GetPetros()
 	{
-		return RSTC_NpcPetros.Cast(GetGame().GetWorld().FindEntityByName("Petros"));
+		return RSTC_NpcPetros.GetPetros();
 	}
 	
 	static RSTC_FactionManager GetFactionManager()

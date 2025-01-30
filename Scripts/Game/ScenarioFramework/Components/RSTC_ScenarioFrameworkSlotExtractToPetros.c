@@ -7,7 +7,7 @@ class RSTC_ScenarioFrameworkSlotExtractionToPetros : SCR_ScenarioFrameworkSlotEx
 {
 	override bool InitOtherThings()
     {
-		RSTC_NpcPetros petros = RSTC_Global.GetPetros();
+		SCR_ChimeraCharacter petros = RSTC_Global.GetPetros();
 		if(!petros)
 			return false;
 		
